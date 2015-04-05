@@ -15,15 +15,23 @@ var serverCallback = function(incomingMessage, response) {
 
     // If the file doesn't exist on our server, send a 404 response
     if(error) {
-      response.writeHead(404, {'Content-Type': 'text/plain'});
-      response.write('404 THIS SITE AIN\'T A THANG\n');
-      response.end();
+      fs.readFile('views/404.html', function(error, fileText) {
+        if(error) {
+          response.writeHead(500, {'Content-Type': 'text/plain'});
+          response.write(error + "\n");
+          response.end();
+          return;
+        }
+        response.writeHead(404);
+        response.write(fileText);
+        response.end();
+      });
       return;
     }
 
     // If the requested file is a directory, append our index.html
     if(fs.statSync(file).isDirectory()){
-      file += 'index.html';
+      file += 'views/index.html';
     }
 
     // Read our file
