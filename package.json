@@ -1,0 +1,16 @@
+{
+  "name": "BW-Main",
+  "version": "1.0.0",
+  "description": "The Blanket Warriors Home Page",
+  "main": "index.js",
+  "dependencies": {
+    "bower": "^1.4.1",
+    "express": "^4.12.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ben Pevsner",
+  "license": "ISC"
+}
