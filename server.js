@@ -1,66 +1,12 @@
-// Declare our dependencies.
-var http = require('http');
-var url  = require('url');
+var express = require('express');
+var app = express();
 var path = require('path');
-var fs   = require('fs');
 
-// The function we run on every incoming message
-var serverCallback = function(incomingMessage, response) {
+app.use(express.static(path.join(__dirname, 'public')));
 
-  // Get the location of our file
-  var file = path.join(process.cwd(), url.parse(incomingMessage.url).pathname);
+app.use(function(req, res) {
+  res.sendFile(path.join(__dirname, 'public/404.html'), 404);
+});
 
-  // Attempt to open our file
-  fs.open(file, 'r', function(error) {
-
-    // If the file doesn't exist on our server, send a 404 response
-    if(error) {
-      fs.readFile('views/404.html', function(error, fileText) {
-        if(error) {
-          response.writeHead(500, {'Content-Type': 'text/plain'});
-          response.write(error + "\n");
-          response.end();
-          return;
-        }
-        response.writeHead(404);
-        response.write(fileText);
-        response.end();
-      });
-      return;
-    }
-
-    // If the requested file is a directory, append our index.html
-    if(fs.statSync(file).isDirectory()){
-      file += 'views/index.html';
-    }
-
-    // Read our file
-    fs.readFile(file, function(error, fileText) {
-
-      // If there's an error, we have an error!  Send back a 500 response.
-      if(error) {
-        response.writeHead(500, {'Content-Type': 'text/plain'});
-        response.write(error + "\n");
-        response.end();
-        return;
-      }
-
-      // Send back a 200 response with the requested data.
-      response.writeHead(200);
-      response.write(fileText);
-      response.end();
-    });
-  });
-};
-
-// Set our port number
-var port = process.argv[2] || 3000;
-
-// Start our server using the serverCallback function
-var server = http.createServer(serverCallback);
-
-// Have our server listen to requests at our specified port
-server.listen(port);
-
-// Log out to our console, so we know where our server is running!
-console.log("Server running at: http://localhost:" + port);
+app.listen(3000);
+console.log('Listening on port 3000');

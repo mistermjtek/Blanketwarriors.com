@@ -16,7 +16,7 @@ Icon
 .Spotlight-V100
 .Trashes
 /node_modules
-/bower_components
+public/bower_components
 
 
 # Floobits
