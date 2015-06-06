@@ -1,12 +1,13 @@
-var express = require('express');
-var app = express();
-var path = require('path');
+var express = require('express'),
+    path = require('path'),
+    port = process.env.PORT || 3000,
+    app = express();
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname + '/'));
 
-app.use(function(req, res) {
-  res.sendFile(path.join(__dirname, 'public/404.html'), 404);
+app.get('*', function(request, response){
+  response.sendFile(path.join(__dirname, './', 'index.html'));
 });
 
-app.listen(3000);
-console.log('Listening on port 3000');
+app.listen(port);
+console.log("server started on port " + port);
