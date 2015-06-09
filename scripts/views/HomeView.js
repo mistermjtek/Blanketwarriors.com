@@ -4,7 +4,6 @@ var app = app || {};
   app.HomeView = Backbone.View.extend({
 
     id: 'Home',
-
     template: app.JST['tab/home'],
 
     render: function() {

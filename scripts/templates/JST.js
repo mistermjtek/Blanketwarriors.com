@@ -13,29 +13,26 @@ var app = app || {};
 
   // Home Page
   app.JST['tab/home'] = _.template(
-    '<div class="title"><h1>Blanket Warriors</h1></div>' +
-    '<a href="https://github.com/Blanket-Warriors"><img src="../images/GitHub-Mark-Light-120px-plus.png"></a>'
-    );
+    '<div class="title">' +
+      '<h1>Blanket Warriors</h1>' +
+      '<div class=image></div>' +
+    '</div>' +
+    '<a class="github" href="https://github.com/Blanket-Warriors"><img src="../images/GitHub-Mark-Light-120px-plus.png"></a>');
 
   // About Page
   app.JST['tab/about'] = _.template(
-    '<div class="post">' +
-      '<p>We are cool people</p>' +
+    '<div class="content">' +
+      '<h1>We are Blanket Warriors</h1>' +
+      '<p> We do work, drink hot chocolate, and wear blankets when it\'s cold.  We stream on Twitch.tv, are always open to taking on new projects, and always have fun.  Woot.</p>' +
     '</div>');
+
+  app.JST['tab/projects'] = _.template('<div></div>');
 
   // Projects Page
-  app.JST['tab/projects'] = _.template('');
   app.JST['tab/projects/projectList'] = _.template('<div class="postList"><h2><%=title%></h2></div>');
 
-  app.JST['tab/projects/project'] = _.template(
-    '<div class="post">' +
-    '<div class="description"> <%=description%> </div>' +
-    '<a class="github" href="<%=github%>"><img src="../images/GitHub-Mark-120px-plus.png"/></a>' +
-    '</div>');
+  app.JST['tab/posts'] = _.template('<div></div>');
 
-
-  // Blog Page
-  app.JST['tab/posts'] = _.template('');
   app.JST['tab/posts/postList'] = _.template(
     '<div class="postList">' +
       '<h2><%=title%></h2>' +
@@ -46,9 +43,5 @@ var app = app || {};
     '</div>'
 
     );
-
-  app.JST['tab/posts/post'] = _.template(
-    '<div class="post">' +
-    '</div>');
 
 })();
