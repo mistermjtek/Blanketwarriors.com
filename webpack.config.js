@@ -3,11 +3,15 @@ module.exports = {
     app: './app/client.js'
   },
   output: {
-    filename: './app/build/client.js'
+    filename: './build/client.js'
   },
   module: {
     loaders: [
-      { test: /\.js$/, loaders: ['jsx-loader', 'babel'] }
+      { test: /\.js$/, loaders: ['jsx-loader', 'babel'] },
+      {
+        test: /\.scss$/,
+        loaders: ['style', 'css', 'sass']
+      }
     ]
   }
 }

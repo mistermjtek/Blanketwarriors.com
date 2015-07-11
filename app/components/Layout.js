@@ -1,13 +1,17 @@
 'use strict';
 import React from 'react';
 import Router from 'react-router';
+import Navigation from './Navigation';
 
 const Layout = React.createClass({
   render: function() {
     return (
-      <Router.RouteHandler />
+      <div>
+        <Navigation />
+        <Router.RouteHandler />
+      </div>
     );
   }
 });
 
-export {Layout};
+export default Layout;

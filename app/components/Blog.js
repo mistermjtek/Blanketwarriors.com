@@ -9,4 +9,4 @@ const Blog = React.createClass({
   }
 });
 
-export {Blog};
+export default Blog;
