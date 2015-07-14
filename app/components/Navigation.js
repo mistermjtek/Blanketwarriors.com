@@ -6,6 +6,7 @@ import Router from 'react-router';
 const NavLink = React.createClass({
   render: function() {
     let other = _.omit(this.props, 'to', 'other');
+    console.log(this.props);
     let names = [].concat(this.props.to); //typecast to array
 
     let className = this.props.className || '';

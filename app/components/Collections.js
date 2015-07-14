@@ -1,8 +1,9 @@
 'use strict';
+import bigDaddy from './projects/bigDaddy'
 
 const Collections = {
   Projects: [
-    import './projects/bigDaddy'
+    bigDaddy
   ],
   Posts: [
   ]

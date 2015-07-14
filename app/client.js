@@ -5,6 +5,5 @@ import Routes from './components/Routes';
 
 Router.run(Routes, Router.HistoryLocation, (Root) => {
   React.render(<Root />, document.body);
-  console.log("Client Rendered");
 });
 

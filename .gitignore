@@ -17,6 +17,7 @@ Icon
 .Trashes
 /node_modules
 public/bower_components
+/app/build
 
 
 # Floobits
