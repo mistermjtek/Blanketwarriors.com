@@ -46,3 +46,5 @@ const Nav = React.createClass({
     );
   }
 });
+
+export default Nav;

@@ -9,4 +9,4 @@ const Contact = React.createClass({
   }
 });
 
-export {Contact};
+export default Contact;

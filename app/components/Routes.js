@@ -16,19 +16,19 @@ const DefaultRoute = Router.DefaultRoute;
 const NotFoundRoute = Router.NotFoundRoute;
 
 const routes = (
-  <Route name="appBody" path="/" handler={Layout}>
+  <Route handler={Layout}>
     <DefaultRoute name="home" handler={Home}/>
 
-    <Route name="blog" path="blog/?" handler={Blog}/>
-    <Route name="blogPost" path="blog/:name" handler={BlogPost}/>
+    <Route name="blog" path="/blog" handler={Blog}/>
+    <Route name="blogPost" path="/blog/:name" handler={BlogPost}/>
 
-    <Route name="Contact" path="contact/?" handler={Contact}/>
+    <Route name="contact" path="/contact" handler={Contact}/>
 
-    <Route name="projects" path="projects/?" handler={Projects}/>
-    <Route name="project" path="projects/:name" handler={Project}/>
+    <Route name="projects" path="/projects" handler={Projects}/>
+    <Route name="project" path="/projects/:name" handler={Project}/>
 
     <NotFoundRoute name="not-found" handler={NotFound}/>
   </Route>
 );
 
-export {routes};
+export default routes;

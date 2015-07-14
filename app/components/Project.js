@@ -9,4 +9,4 @@ const Project = React.createClass({
   }
 });
 
-export {Project};
+export default Project;

@@ -10,4 +10,4 @@ const Layout = React.createClass({
   }
 });
 
-export {Layout};
+export default Layout;

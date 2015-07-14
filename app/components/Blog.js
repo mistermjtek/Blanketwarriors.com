@@ -4,9 +4,18 @@ import React from 'react';
 const Blog = React.createClass({
   render: function() {
     return (
-      <h1>BLOG!!!</h1>
+      <div>
+        <h1>BLOG!!!</h1>
+        this.props.posts.map(function(post) {
+         // <Post
+         //  title={post.title}
+         //  author={post.author}
+         //  content={post.content}
+         // />
+        });
+      </div>
     );
   }
 });
 
-export {Blog};
+export default Blog;

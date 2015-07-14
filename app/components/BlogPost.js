@@ -4,9 +4,13 @@ import React from 'react';
 const BlogPost = React.createClass({
   render: function() {
     return (
-      <h1>BLOGPOST!!!</h1>
+      <div>
+        <h1>{this.props.data.title}</h1>
+        <h2>{this.props.data.author}</h2>
+        <p>{this.props.data.content}</p>
+      </div>
     );
   }
 });
 
-export {BlogPost};
+export default BlogPost;
