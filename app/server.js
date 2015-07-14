@@ -1,13 +1,15 @@
+'use strict';
+
 var express = require('express');
-var app = express();
+var server = express();
 var path = require('path');
 
-app.use('/', express.static(path.join(__dirname, '/build')));
+server.use('/', express.static(path.join(__dirname, '/build')));
 
-app.get('/*', function(req, res) {
+server.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, '/index.html'));
 });
 
-app.listen('8080', function() {
-  console.log('listening on 8080');
-});
+var port = process.env.PORT || 3000;
+server.listen(port);
+console.log('listening on port', port);

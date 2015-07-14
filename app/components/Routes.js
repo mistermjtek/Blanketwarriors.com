@@ -16,7 +16,7 @@ const DefaultRoute = Router.DefaultRoute;
 const NotFoundRoute = Router.NotFoundRoute;
 
 const routes = (
-  <Route handler={Layout}>
+  <Route name="app" path="/" handler={Layout}>
     <DefaultRoute name="home" handler={Home}/>
 
     <Route name="blog" path="/blog" handler={Blog}/>
@@ -27,7 +27,7 @@ const routes = (
     <Route name="projects" path="/projects" handler={Projects}/>
     <Route name="project" path="/projects/:name" handler={Project}/>
 
-    <NotFoundRoute name="not-found" handler={NotFound}/>
+    <NotFoundRoute name="/not-found" handler={NotFound}/>
   </Route>
 );
 
