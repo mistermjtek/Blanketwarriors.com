@@ -7,6 +7,7 @@ import Home from './Home';
 import Blog from './Blog';
 import BlogPost from './BlogPost';
 import Contact from './Contact';
+import About from './About';
 import Projects from './Projects';
 import Project from './Project';
 import NotFound from './NotFound';
@@ -19,12 +20,13 @@ const routes = (
   <Route handler={Layout}>
     <DefaultRoute name="home" handler={Home}/>
 
-    <Route name="blog" path="/blog" handler={Blog}/>
+    <Route name="blog" path="/blog/?" handler={Blog}/>
     <Route name="blogPost" path="/blog/:name" handler={BlogPost}/>
 
-    <Route name="contact" path="/contact" handler={Contact}/>
+    <Route name="about" path="/about/?" handler={About}/>
+    <Route name="contact" path="/contact/?" handler={Contact}/>
 
-    <Route name="projects" path="/projects" handler={Projects}/>
+    <Route name="projects" path="/projects/?" handler={Projects}/>
     <Route name="project" path="/projects/:name" handler={Project}/>
 
     <NotFoundRoute name="/not-found" handler={NotFound}/>

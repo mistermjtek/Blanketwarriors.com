@@ -2,10 +2,10 @@
 import React from 'react';
 
 var project = {
-  name: 'bigDaddy',
-  index: 0,
-  title: 'Big Daddy',
-  description: 'Big Daddy finds any mention of the word "data" and replaces it with the superior word "daddy".'
+  name: 'unearth',
+  index: 2,
+  title: 'Unearth',
+  description: 'A mobile application that encourages exploration by allowing users to track where they’ve been and where they should go next.'
 };
 
 project.component = React.createClass({

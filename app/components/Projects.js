@@ -8,12 +8,18 @@ const Projects = React.createClass({
 
     let projects = _.sortBy(this.props.collections.Projects, function(p) {
       return p.index;
-    })
+    });
+
+    let projectList = projects.map(function(project) {
+      return (
+        <Router.Link to="project" params={project} key={project.name}>
+          {project.title}
+        </Router.Link>
+      );
+    });
 
     return (
-      <h1>PROJECTS!!!</h1>
-
-
+      <div>{projectList}</div>
     );
   }
 });

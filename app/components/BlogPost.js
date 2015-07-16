@@ -1,15 +1,18 @@
 'use strict';
 import React from 'react';
+import _ from 'lodash';
 
 const BlogPost = React.createClass({
+  blogPost: function() {
+    let name = this.props.params.name;
+    return _.find(this.props.collections.BlogPosts, function(p) {
+      return p.name === name;
+    })
+  },
+
   render: function() {
-    return (
-      <div>
-        <h1>{this.props.data.title}</h1>
-        <h2>{this.props.data.author}</h2>
-        <p>{this.props.data.content}</p>
-      </div>
-    );
+    let blogPost = this.blogPost();
+    return React.createElement(blogPost.component, _.extend({}, this.props, {blogPost: blogPost}));
   }
 });
 
