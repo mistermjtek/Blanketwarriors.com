@@ -35,5 +35,4 @@ function watch() {
 
 gulp.task('build', function() { return compile(); });
 gulp.task('watch', function() { return watch(); });
-
 gulp.task('default', ['watch']);
