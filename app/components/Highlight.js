@@ -1,4 +1,4 @@
-import hljs from 'highlight.js';
+import Prism from '../lib/prism.js';
 import React from 'react';
 
 const Highlight = React.createClass({
@@ -19,7 +19,7 @@ const Highlight = React.createClass({
     let nodes = domNode.querySelectorAll('pre code');
     if (nodes.length > 0) {
       for (let i = 0; i < nodes.length; i=i+1) {
-        hljs.highlightBlock(nodes[i]);
+        Prism.highlightElement(nodes[i]);
       }
     }
   },

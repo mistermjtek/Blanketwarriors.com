@@ -15,9 +15,10 @@ project.component = React.createClass({
       <div>
         <h1>{project.title}</h1>
         <h2>{project.description}</h2>
-        <Highlight className="javascript">{
-          "var project = {\n name: 'tokki',\n index: 1,\n title: 'Tokki',\n description: 'A real-time audience engagement and interaction tool to improve live events'\n};"
-        }</Highlight>
+        <Highlight className="language-javascript">{"console.log('la');" }</Highlight>
+        <Highlight className="language-javascript">{"var express = require('express');var app = express();\napp.use(express.static(__dirname + '/public'));\napp.listen(process.env.PORT || 3000);"}</Highlight>
+        <div>
+        </div>
       </div>
     );
   }
