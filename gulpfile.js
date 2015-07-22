@@ -5,6 +5,9 @@ var buffer = require('vinyl-buffer');
 var browserify = require('browserify');
 var watchify = require('watchify');
 var babel = require('babelify');
+var sass = require('gulp-sass');
+var concat = require('gulp-concat');
+var nodemon = require('gulp-nodemon');
 
 function compile(watch) {
   var bundler = watchify(browserify('./app/client.js', { debug: true }).transform(babel));
@@ -21,9 +24,10 @@ function compile(watch) {
 
   if (watch) {
     bundler.on('update', function() {
-      console.log('-> bundling...');
+      console.log('-> bundling JS...');
       rebundle();
     });
+
   }
 
   rebundle();
@@ -33,6 +37,22 @@ function watch() {
   return compile(true);
 };
 
+gulp.task('sass', function() {
+  console.log('-> bundling CSS...');
+  gulp.src('./app/stylesheets/**/*.scss')
+    .pipe(sass())
+    .pipe(concat('styles.css'))
+    .pipe(gulp.dest('./app/build'));
+});
+
 gulp.task('build', function() { return compile(); });
-gulp.task('watch', function() { return watch(); });
+gulp.task('watch', function() {
+  gulp.watch('./app/stylesheets/**/*.scss', ['sass']);
+  nodemon({
+    script: 'app/server.js'
+  , ext: 'js html'
+  , env: { 'NODE_ENV': 'development' }
+  })
+  return watch();
+});
 gulp.task('default', ['watch']);
