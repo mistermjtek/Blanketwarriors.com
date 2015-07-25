@@ -12,14 +12,16 @@ const Blog = React.createClass({
 
     let blogPostList = blogPosts.map(function(blogPost) {
       return (
-        <Router.Link to="blogPost" params={blogPost} key={blogPost.name}>
-          <span className="subtitle-item">{blogPost.title + '\n'}</span>
-        </Router.Link>
+        <div className="link" key={blogPost.name}>
+          <Router.Link to="blogPost" params={blogPost}>
+            <span className="subtitle-item">{blogPost.title + '\n'}</span>
+          </Router.Link>
+        </div>
       );
     });
 
     return (
-      <div>{blogPostList}</div>
+      <div className="list">{blogPostList}</div>
     );
   }
 });

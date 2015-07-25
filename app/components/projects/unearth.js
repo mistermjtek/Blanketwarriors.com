@@ -16,6 +16,7 @@ project.component = React.createClass({
       <div>
         <h1>{project.title}</h1>
         <h2>{project.description}</h2>
+        <a href={project.repository}>Repo Link</a>
         <img alt="unearth1" src="/assets/projects/unearth/unearth1.svg" onerror="this.src='/assets/projects/unearth/unearth1.png'" />
       </div>
     );

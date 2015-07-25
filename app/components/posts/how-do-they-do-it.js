@@ -13,7 +13,7 @@ var blogPost = {
 blogPost.component = React.createClass({
   render: function() {
     return (
-      <div>
+      <div className="blog-post">
         <h1>{blogPost.title}</h1>
         <h2>{blogPost.date}</h2>
         <h2>{blogPost.description}</h2>

@@ -1,5 +1,4 @@
 'use strict';
-
 var express = require('express');
 var server = express();
 var path = require('path');
@@ -16,6 +15,6 @@ server.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, '/index.html'));
 });
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 2000;
 server.listen(port);
 console.log('listening on port', port);

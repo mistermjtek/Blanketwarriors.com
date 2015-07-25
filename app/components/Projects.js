@@ -12,14 +12,16 @@ const Projects = React.createClass({
 
     let projectList = projects.map(function(project) {
       return (
-        <Router.Link to="project" params={project} key={project.name}>
-          {project.title}
-        </Router.Link>
+        <div className="bigLink" key={project.name}>
+          <Router.Link to="project" params={project}>
+            {project.title}
+          </Router.Link>
+        </div>
       );
     });
 
     return (
-      <div>{projectList}</div>
+      <div className="list">{projectList}</div>
     );
   }
 });

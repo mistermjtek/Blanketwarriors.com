@@ -1,13 +1,9 @@
-
-.DS_Store
-.AppleDouble
-.LSOverride
-azure.err
-iisnode.yml
+# Files
+/node_modules
+/app/build
 
 # Icon must ends with two \r.
 Icon
-
 
 # Thumbnails
 ._*
@@ -15,10 +11,7 @@ Icon
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
-/node_modules
-public/bower_components
-/app/build
-
+.DS_Store
 
 # Floobits
 .floo
