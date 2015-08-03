@@ -15,17 +15,11 @@ const Highlight = React.createClass({
     this.highlightCode();
   },
   highlightCode: function () {
-    let domNode = this.getDOMNode();
-    let nodes = domNode.querySelectorAll('pre code');
-    if (nodes.length > 0) {
-      for (let i = 0; i < nodes.length; i=i+1) {
-        Prism.highlightElement(nodes[i]);
-      }
-    }
+    Prism.highlightAll(this.getDOMNode());
   },
   render: function () {
     if (this.props.innerHTML) {
-      return <div dangerouslySetInnerHTML={{__html: this.props.children}} className={this.props.className || null}></div>;
+      return <div dangerouslySetInnerHTML={{__html: this.props.children[1]}} className={this.props.className || null}></div>;
     } else {
       return <pre><code className={this.props.className}>{this.props.children}</code></pre>;
     }

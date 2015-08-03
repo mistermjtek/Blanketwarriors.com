@@ -23,7 +23,6 @@ const Nav = React.createClass({
         <NavLink to="about">About</NavLink>
         <NavLink to={["projects", "project"]}>Projects</NavLink>
         <NavLink to={["blog", "post"]}>Blog</NavLink>
-        <NavLink to="contact">Contact</NavLink>
       </nav>
     );
   }
