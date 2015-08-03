@@ -1,5 +1,5 @@
 .list {
-  margin: 20px 20% 20px 20%;
+  margin: 20px auto 20px auto;
 
   a {
     margin: 5px;
@@ -14,15 +14,15 @@
 
   .link {
     display: inline-block;
-    margin: 10px 10px 10px 10px;
+    margin: 21px 21px 21px 21px;
     width: 300px;
     height: 300px;
   }
 
   .bigLink {
-    display: block;
+    display: inline-block;
     width: 90%;
-    margin: 0 auto 0 auto;
+    margin: 21px auto 21px auto;
     height: 300px;
   }
 }

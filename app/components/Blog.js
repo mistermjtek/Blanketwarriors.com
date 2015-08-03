@@ -3,9 +3,8 @@ import _ from 'lodash';
 import React from 'react';
 import Router from 'react-router';
 
-const Blog = React.createClass({
-  render: function() {
-
+class Blog extends React.Component {
+  render() {
     let blogPosts = _.sortBy(this.props.collections.BlogPosts, function(p) {
       return p.index;
     });
@@ -20,10 +19,8 @@ const Blog = React.createClass({
       );
     });
 
-    return (
-      <div className="list">{blogPostList}</div>
-    );
+    return <div className="list">{blogPostList}</div>;
   }
-});
+}
 
 export default Blog;

@@ -3,20 +3,20 @@ import _ from 'lodash';
 import React from 'react';
 import Router from 'react-router';
 
-const NavLink = React.createClass({
-  render: function() {
+class NavLink extends React.Component {
+  render() {
     let other = _.omit(this.props, 'to', 'other');
     let names = [].concat(this.props.to); //typecast to array
-
     let className = this.props.className || '';
+
     return (
-      <Router.Link to={names[0]} className={className} {...other} />
+      <Router.Link to={ names[0] } className={ className } {...other} />
     );
   }
-});
+}
 
-const Nav = React.createClass({
-  render: function() {
+class Nav extends React.Component {
+  render() {
     return (
       <nav>
         <NavLink to="home">Home</NavLink>
@@ -26,6 +26,6 @@ const Nav = React.createClass({
       </nav>
     );
   }
-});
+}
 
 export default Nav;

@@ -4,8 +4,8 @@ import Router from 'react-router';
 import Navigation from './Navigation';
 import collections from './Collections';
 
-const Layout = React.createClass({
-  render: function() {
+class Layout extends React.Component {
+  render() {
     return (
       <div>
         <Navigation />
@@ -13,6 +13,6 @@ const Layout = React.createClass({
       </div>
     );
   }
-});
+}
 
 export default Layout;

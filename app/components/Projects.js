@@ -3,9 +3,8 @@ import _ from 'lodash';
 import React from 'react';
 import Router from 'react-router';
 
-const Projects = React.createClass({
-  render: function() {
-
+class Projects extends React.Component {
+  render() {
     let projects = _.sortBy(this.props.collections.Projects, function(p) {
       return p.index;
     });
@@ -20,10 +19,8 @@ const Projects = React.createClass({
       );
     });
 
-    return (
-      <div className="list">{projectList}</div>
-    );
+    return <div className="list">{projectList}</div> ;
   }
-});
+}
 
 export default Projects;

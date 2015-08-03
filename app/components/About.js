@@ -1,8 +1,8 @@
 'use strict';
 import React from 'react';
 
-const About = React.createClass({
-  render: function() {
+class About extends React.Component {
+  render() {
     return (
       <div className="about">
         <h1>We are Blanket Warriors</h1>
@@ -10,6 +10,6 @@ const About = React.createClass({
       </div>
     );
   }
-});
+}
 
 export default About;

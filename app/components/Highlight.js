@@ -1,29 +1,29 @@
-import Prism from '../lib/prism.js';
+'use strict';
 import React from 'react';
+import Prism from '../lib/prism.js';
 
-const Highlight = React.createClass({
-  getDefaultProps: function () {
-    return {
-      innerHTML: false,
-      className: null
-    };
-  },
-  componentDidMount: function () {
+class Highlight extends React.Component{
+  componentDidMount() {
     this.highlightCode();
-  },
-  componentDidUpdate: function () {
+  }
+  componentDidUpdate() {
     this.highlightCode();
-  },
-  highlightCode: function () {
-    Prism.highlightAll(this.getDOMNode());
-  },
-  render: function () {
+  }
+  highlightCode() {
+    Prism.highlightAll(React.findDOMNode(this));
+  }
+  render() {
     if (this.props.innerHTML) {
       return <div dangerouslySetInnerHTML={{__html: this.props.children[1]}} className={this.props.className || null}></div>;
     } else {
       return <pre><code className={this.props.className}>{this.props.children}</code></pre>;
     }
   }
-});
+}
+
+Highlight.defaultProps = {
+  innerHTML: false,
+  className: null
+}
 
 export default Highlight;
