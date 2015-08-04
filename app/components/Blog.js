@@ -11,9 +11,11 @@ class Blog extends React.Component {
 
     let blogPostList = blogPosts.map(function(blogPost) {
       return (
-        <div className="link" key={blogPost.name}>
+        <div className="bigLink" key={blogPost.name}>
           <Router.Link to="blogPost" params={blogPost}>
-            <span className="subtitle-item">{blogPost.title + '\n'}</span>
+            <h1 className="item">{blogPost.title}</h1>
+            <h3>{blogPost.description}</h3>
+            <h4 className="info"><img src={blogPost.author.image} />  {blogPost.author.name} | {blogPost.date}</h4>
           </Router.Link>
         </div>
       );

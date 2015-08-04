@@ -13,7 +13,7 @@ class Projects extends React.Component {
       return (
         <div className="bigLink" key={project.name}>
           <Router.Link to="project" params={project}>
-            {project.title}
+            <h1>{project.title}</h1>
           </Router.Link>
         </div>
       );

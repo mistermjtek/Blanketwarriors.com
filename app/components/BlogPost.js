@@ -21,10 +21,12 @@ class BlogPost extends React.Component {
       render() {
         return (
           <div className="blog-post">
-            <h1>{blogPost.title}</h1>
-            <h2>{blogPost.date}</h2>
-            <h2>{blogPost.description}</h2>
-            <Highlight innerHTML={true}> {blogPost.content} </Highlight>
+            <header className="title">
+              <h1>{blogPost.title}</h1>
+              <h2>{blogPost.description}</h2>
+              <h3><img src={blogPost.author.image}/> {blogPost.author.name} | {blogPost.date}</h3>
+            </header>
+            <Highlight innerHTML={true} className="content"> {blogPost.content} </Highlight>
           </div>
         );
       }
