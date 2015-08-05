@@ -1,3 +1,4 @@
+'use strict';
 var marked = require('marked').setOptions({ langPrefix: 'language-' });
 var prism = require('./lib/prism.js')
 var path = require('path');
@@ -16,7 +17,7 @@ function readPosts(inputDir, outputDir) {
     for(var i = 0; i < files.length; i++) {
       // Converts each markdown file to text and adds it to posts object
       readPost(files[i], files, inputDir, outputDir, function(fileName, data) {
-        posts[fileName.replace(/.md$/, '')] = text2string(marked(data));
+        posts[fileName.replace(/.md$/, '')] = marked(data);
         count++;
 
         // After all files are added, write it to file
@@ -35,20 +36,4 @@ function readPost(fileName, files, inputDir, outputDir, callback) {
   var data = '';
   readStream.on('data', function(chunk) { data += chunk; });
   readStream.on('end', function(error) { callback(fileName, data); });
-};
-
-function text2string(text, quote) {
-  var map = { single: "'", double: '"' };
-  var escapeSingleQuote = [[/'/g, "\\'"]];
-  var escapeDoubleQuote = [[/"/g, '\\"']];
-  var escapes = [[/\r\n|\r|\n/g, "\\n"], [/\t/g, "\\t"]];
-  var s = escapeSingleQuote.concat(escapes);
-  var d = escapeDoubleQuote.concat(escapes);
-  quote = quote || map.double;
-  var replacements = (quote == map.double) ? d : s;
-  for (var i = 0, len = replacements.length; i < len; i++) {
-    var replacement = replacements[i];
-    text = text.replace(replacement[0], replacement[1]);
-  }
-  return quote + text + quote;
 };
