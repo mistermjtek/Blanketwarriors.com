@@ -7,14 +7,31 @@ body {
   cursor: default;
 }
 
+.page {
+  margin: 0px;
+}
+
 p {
   font-family: 'Merriweather', 'serif';
+  font-weight: 300;
 }
 
 h1 { text-align: center; }
 
 .about {
-  margin: 20px 20% 20px 20%;
+  color: #fff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  min-height: 300px;
+  .content {
+    margin: 0 auto 0 auto;
+    width: 400px;
+    position: relative;
+    top: 30%;
+  }
 }
 
 .home {
@@ -23,16 +40,17 @@ h1 { text-align: center; }
   top: 0;
   width: 100vw;
   height: 100vh;
+  min-height: 300px;
   img{
     position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 30%;
   }
 }
 
 /* Navigation */
-nav {
+#menu {
   text-align: center;
+  background: #5A90F5;
   padding: 20px 0 20px 0;
   margin: 0;
   width: 100%;
@@ -47,7 +65,6 @@ nav {
     z-index: 10;
     text-decoration: none;
   }
-
   a:before {
     content: "";
     width: 70%;

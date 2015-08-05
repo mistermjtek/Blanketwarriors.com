@@ -19,7 +19,7 @@ class Projects extends React.Component {
       );
     });
 
-    return <div className="list">{projectList}</div> ;
+    return <div className="list page">{projectList}</div> ;
   }
 }
 

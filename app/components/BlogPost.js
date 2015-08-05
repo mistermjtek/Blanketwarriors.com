@@ -20,7 +20,7 @@ class BlogPost extends React.Component {
     class Component extends React.Component {
       render() {
         return (
-          <div className="blog-post">
+          <div className="blog-post page">
             <header className="title">
               <h1>{blogPost.title}</h1>
               <h2>{blogPost.description}</h2>

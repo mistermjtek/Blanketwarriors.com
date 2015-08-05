@@ -21,7 +21,7 @@ class Blog extends React.Component {
       );
     });
 
-    return <div className="list">{blogPostList}</div>;
+    return <div className="list page">{blogPostList}</div>;
   }
 }
 

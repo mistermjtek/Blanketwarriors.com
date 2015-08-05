@@ -6,10 +6,10 @@ import codingCrockPot from './projects/codingCrockPot';
 
 const Collections = {
   Projects: [
-    bigDaddy,
+    codingCrockPot,
     tokki,
     unearth,
-    codingCrockPot
+    bigDaddy,
   ],
   BlogPosts: [
     {
