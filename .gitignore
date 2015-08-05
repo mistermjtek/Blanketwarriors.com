@@ -1,6 +1,8 @@
 # Files
 /node_modules
 /app/build
+/app/lib/posts.js
+/app/assets/Blog
 
 # Icon must ends with two \r.
 Icon
