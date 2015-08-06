@@ -1,0 +1,80 @@
+.project {
+  padding: 40px 20% 40px 20%;
+  margin: 0 auto 0 auto;
+  text-align: center;
+  line-height: 1.5;
+  .title {
+    line-height: 1.2;
+    h1{
+      margin: 0;
+      font-size: 3em;
+    }
+    h2{ margin: 0; }
+    margin: 50px 0 50px 0;
+    img{ margin: 0; }
+  }
+  p{
+    text-align: left;
+    font-weight: 300;
+  }
+  img {
+    max-width: 90%;
+    margin: 20px;
+    border: 2px solid black;
+  }
+  .links {
+    img {
+      border: none;
+      max-width: 30px;
+      margin: 10px;
+    }
+  }
+}
+
+.github-mark {
+  width: 30px;
+}
+
+.big-daddy {
+  background: #000;
+  background-image: url("http://a1star.com/images/starsglow1.gif");
+  background-repeat: repeat;
+
+  padding: 0;
+  .title {
+    padding: 0;
+    margin: 0 0 40px 0;
+    img{
+      width: 100vw;
+      max-width: 100%;
+      margin: 0px;
+      border: none;
+    }
+  }
+  .content {
+    p{ text-align: center; }
+    padding: 0 20% 40px 20%;
+  }
+}
+
+.tokki {
+  background: #355065;
+  h1 { font-size: 4em;}
+}
+
+.unearth {
+  background: #fff;
+  color: #000;
+  .title {
+    margin: 0 0 40px 0;
+    img{ max-width: 90%; }
+  }
+  img {
+    border: none;
+    max-width: 200px;
+  }
+}
+
+.crock-pot {
+  background: #292429;
+}

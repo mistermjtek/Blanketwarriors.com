@@ -1,0 +1,103 @@
+body {
+  font-family: "Quattrocento Sans", "Arial", "sans-serif";
+  background: linear-gradient(#5A90F5, #51A0EE);
+  color: #FFF;
+  padding: 0px;
+  margin: 0px;
+  cursor: default;
+}
+
+.page {
+  margin: 0px;
+}
+
+p {
+  font-family: 'Merriweather', 'serif';
+  font-weight: 300;
+}
+
+h1 { text-align: center; }
+
+.about {
+  color: #fff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  min-height: 300px;
+  .content {
+    margin: 0 auto 0 auto;
+    width: 400px;
+    position: relative;
+    top: 30%;
+  }
+}
+
+.home {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  min-height: 300px;
+  img{
+    position: relative;
+    top: 30%;
+  }
+}
+
+/* Navigation */
+#menu {
+  text-align: center;
+  background: #5A90F5;
+  padding: 20px 0 20px 0;
+  margin: 0;
+  width: 100%;
+  height: 20px;
+  z-index: 10;
+  float: center;
+  a {
+    font-size: 20px;
+    color: #F3F4EF;
+    padding: 10px 3% 10px 3%;
+    position: relative;
+    z-index: 10;
+    text-decoration: none;
+  }
+  a:before {
+    content: "";
+    width: 70%;
+    height: 2px;
+    position: absolute;
+    bottom: 15%;
+    left: 15%;
+    background-color: #fff;
+    opacity: 0.3;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-out 0s;
+  }
+
+  a:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+
+  a.selected:before {
+    content: "";
+    width: 70%;
+    height: 2px;
+    position: absolute;
+    bottom: 15%;
+    left: 15%;
+    background-color: #fff;
+    opacity: 1;
+    visibility: visible;
+    transform: scaleX(1);
+    transition: all 0.3s ease-out 0s;
+  }
+}
+
+
+
