@@ -4,6 +4,7 @@ var prism = require('./lib/prism.js')
 var path = require('path');
 var fs = require('fs');
 
+var blogPath = '/assets/Blog/';
 readPosts(path.join(__dirname, 'assets', 'Blog', 'Posts'), path.join(__dirname, 'lib', 'posts.js'));
 
 function readPosts(inputDir, outputDir) {
@@ -17,6 +18,8 @@ function readPosts(inputDir, outputDir) {
     for(var i = 0; i < files.length; i++) {
       // Converts each markdown file to text and adds it to posts object
       readPost(files[i], files, inputDir, outputDir, function(fileName, data) {
+
+        data = data.replace(/(?!\!\[.*\]\()\.\.\/(?=.*\))/g, blogPath);
         posts[fileName.replace(/.md$/, '')] = marked(data);
         count++;
 

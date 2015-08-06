@@ -2,7 +2,7 @@
 import bigDaddy from './projects/bigDaddy';
 import tokki from './projects/tokki';
 import unearth from './projects/unearth';
-import codingCrockPot from './projects/codingCrockPot';
+import crockPot from './projects/crockPot';
 import blogPosts from '../assets/Blog/metadata.js';
 import blogContent from '../lib/posts.js';
 
@@ -13,7 +13,7 @@ Array.prototype.slice.call(blogPosts);
 
 const Collections = {
   Projects: [
-    codingCrockPot,
+    crockPot,
     tokki,
     unearth,
     bigDaddy,

@@ -3,7 +3,7 @@ import React from 'react';
 import Highlight from '../Highlight.js'
 
 var project = {
-  name: 'bigDaddy',
+  name: 'big-daddy',
   index: 3,
   title: 'Big Daddy',
   titleImage: '',

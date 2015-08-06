@@ -24,7 +24,7 @@ class BlogPost extends React.Component {
             <header className="title">
               <h1>{blogPost.title}</h1>
               <h2>{blogPost.description}</h2>
-              <h3><img src={blogPost.author.image}/> {blogPost.author.name} | {blogPost.date}</h3>
+              <h3><img src={'/assets/Blog' + blogPost.author.image}/> {blogPost.author.name} | {blogPost.date}</h3>
             </header>
             <Highlight innerHTML={true} className="content"> {blogPost.content} </Highlight>
           </div>
