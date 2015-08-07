@@ -11,16 +11,16 @@ var build = function(done) {
   return function(error, stats) {
     if(error){ return console.log('Error', error); }
     console.log(stats.toString({colors: true}));
-    done && done();
-  }
-}
+    if(done){ done(); }
+  };
+};
 
 gulp.task('default', function(done) {
   webpack(config).run(build(done));
 });
 
 gulp.task('build:blog', function() {
-  webpack(config).run(function() {
+  webpack(config).run(function(error, stats) {
     var inputDir = path.join(__dirname, 'app/assets/Blog/Posts');;
     var outputDir = path.join(__dirname, 'app/lib/posts.js');
     var assetDir = '/assets/Blog/';
@@ -37,7 +37,7 @@ gulp.task('build:watch', function() {
   });
 });
 
-gulp.task('run', ['build:watch'], function() {
+gulp.task('run', ['build:blog', 'build:watch'], function() {
   nodemon({
     execMap: { js: 'node' },
     script: path.join(__dirname, 'app/server.js'),
