@@ -12,7 +12,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader', sourceMap: true},
-      { test: /\.scss$/, loader: 'style!css!sass' }
+      { test: /\.scss$/, loader: 'style!css!sass?sourceMap' }
     ]
   },
   devtool: '#inline-source-map'

@@ -9,7 +9,7 @@ class Blog extends React.Component {
       return p.index;
     });
 
-    let blogPostList = blogPosts.map(function(blogPost) {
+    let blogPostList = _.map(blogPosts, function(blogPost) {
       return (
         <div className="bigLink" key={blogPost.name}>
           <Router.Link to="blogPost" params={blogPost}>
