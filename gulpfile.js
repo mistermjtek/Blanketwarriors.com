@@ -1,58 +1,41 @@
+'use strict';
+var path = require('path');
 var gulp = require('gulp');
-var sourcemaps = require('gulp-sourcemaps');
-var source = require('vinyl-source-stream');
-var buffer = require('vinyl-buffer');
-var browserify = require('browserify');
-var watchify = require('watchify');
-var babel = require('babelify');
-var sass = require('gulp-sass');
-var concat = require('gulp-concat');
-var nodemon = require('gulp-nodemon');
+var webpack = require('webpack');
+var nodemon = require('nodemon');
 
-function compile(watch) {
-  var bundler = watchify(browserify('./app/client.js', { debug: true }).transform(babel));
+var bloginator = require('./app/bloginator.js');
+var config = require('./webpack.config.js');
 
-  function rebundle() {
-    bundler.bundle()
-      .on('error', function(err) { console.error(err); this.emit('end'); })
-      .pipe(source('build.js'))
-      .pipe(buffer())
-      .pipe(sourcemaps.init({ loadMaps: true }))
-      .pipe(sourcemaps.write('./'))
-      .pipe(gulp.dest('./app/build'));
-  }
-
-  if (watch) {
-    bundler.on('update', function() {
-      console.log('-> bundling JS...');
-      rebundle();
+var build = function(done) {
+  return function(error, stats) {
+    if(error){ return console.log('Error', error); }
+    console.log(stats.toString({colors: true}));
+    bloginator(path.join(__dirname, 'app/assets/Blog/Posts'), path.join(__dirname, 'app/lib/posts.js'), '/assets/Blog/', function(){
+      done && done();
     });
-
   }
-
-  rebundle();
 }
 
-function watch() {
-  return compile(true);
-};
-
-gulp.task('sass', function() {
-  console.log('-> bundling CSS...');
-  gulp.src('./app/stylesheets/**/*.scss')
-    .pipe(sass())
-    .pipe(concat('styles.css'))
-    .pipe(gulp.dest('./app/build'));
+gulp.task('default', function(done) {
+  webpack(config).run(build(done));
 });
 
-gulp.task('build', function() { return compile(); });
-gulp.task('watch', function() {
-  gulp.watch('./app/stylesheets/**/*.scss', ['sass']);
+gulp.task('build:watch', function() {
+  webpack(config).watch(100, function(error, stats) {
+    build()(error, stats);
+    nodemon.restart();
+  });
+});
+
+gulp.task('run', ['build:watch'], function() {
   nodemon({
-    script: 'app/server.js'
-  , ext: 'js html'
-  , env: { 'NODE_ENV': 'development' }
-  })
-  return watch();
+    execMap: { js: 'node' },
+    script: path.join(__dirname, 'app/server.js'),
+  }).on('restart', function() {
+    console.log('Restarted!');
+  });
 });
-gulp.task('default', ['watch']);
+
+
+
