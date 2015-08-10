@@ -1,5 +1,5 @@
 # BlanketWarriors.com
-  BlanketWarriors.com is a client-side rendered web application (server-rendering is on the way).
+  BlanketWarriors.com is a isomorphic website to host Blanket Warrior projects and blogs.
 
 ## Usage
   1. `npm install`

@@ -1,7 +1,3 @@
-@import './blogPost.scss';
-@import './lists.scss';
-@import './projects.scss';
-
 body {
   font-family: "Quattrocento Sans", "Arial", "sans-serif";
   background: linear-gradient(#5A90F5, #51A0EE);
@@ -103,5 +99,6 @@ h1 { text-align: center; }
   }
 }
 
-
-
+@import './blogPost.scss';
+@import './lists.scss';
+@import './projects.scss';
