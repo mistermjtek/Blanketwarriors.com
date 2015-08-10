@@ -1,13 +1,13 @@
 {
   "name": "blanketwarriors.com",
-  "version": "2.0.0",
-  "description": "",
-  "main": "index.js",
+  "author": "Benjamin Pevsner",
+  "version": "2.1.0",
+  "description": "The blanketwarriors website",
+  "repository": "https://github.com/Blanket-Warriors/blanketwarriors.com",
   "scripts": {
     "start": "gulp run",
     "build": "gulp build:blog"
   },
-  "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.13.0",
@@ -19,6 +19,8 @@
   "devDependencies": {
     "babel-loader": "^5.3.2",
     "css-loader": "^0.15.6",
+    "extract-text-webpack-plugin": "^0.8.2",
+    "json-loader": "^0.5.2",
     "nodemon": "^1.4.0",
     "sass-loader": "^2.0.0",
     "style-loader": "^0.12.3",
