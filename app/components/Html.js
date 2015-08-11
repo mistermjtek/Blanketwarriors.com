@@ -14,7 +14,9 @@ class Html extends React.Component {
           <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0, width=device-width" />
 
           <link rel="shortcut icon" type="image/png" href="/assets/favicon.png" sizes="16x16 32x32 64x64" />
-          <link href="http://fonts.googleapis.com/css?family=Merriweather:400,400italic,300italic,300,700,700italic|Quattrocento+Sans:400,700" rel="stylesheet" type="text/css" />
+
+          <script src="//use.typekit.net/uyv6nqe.js"></script>
+          <script src="/assets/fonts.js"></script>
           <link rel="stylesheet" type="text/css" href="/assets/stylesheets/prism.css" />
           <link href="/styles.css" type="text/css/" rel="stylesheet" />
 

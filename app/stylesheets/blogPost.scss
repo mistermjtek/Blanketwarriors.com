@@ -1,23 +1,21 @@
 .blog-post {
   background: #fff;
   color: #000;
-  font-weight: 300;
+
   line-height: 1.5;
 
   header.title {
     background: #71A2FF;
     color: #fff;
     padding: 10% 0 10% 0;
-    font-size: 18px;
+    font-size: 22px;
     text-align: center;
-    font-family: "Quattrocento Sans", "Arial", "sans-serif";
-
-    h2 {
-      font-size: .8 em;
-      font-weight: 300; }
+    font-family: "fira-sans", Arial, Helvetica, sans-serif;
+    h2 { font-size: .8 em; }
     h3 {
-      font-family: 'Merriweather', 'serif';
-      font-weight: 300; }
+      font-family: "freight-text-pro", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+      font-weight: normal;
+    }
     img {
       vertical-align: middle;
       height: 40px;
@@ -38,11 +36,12 @@
     display: block;
 
     .content {
-      word-wrap: break-word;
       letter-spacing: .01rem;
       display: inline;
-      font-size: 16px;
+      font-size: 22px;
       line-height: 1.7;
+      font-family: "jaf-bernino-sans";
+
       h1{
         text-align: left;
         margin: 0 0 25px 0;
@@ -70,11 +69,16 @@
 
       p {
         margin: 0 0 25px 0;
-        font-size: 1em; }
+        font-size: 1em;
+        font-family: "freight-text-pro", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+      }
       a {
         color: #000; }
       pre {
         margin: 0 0 25px 0;
+      }
+      :not(pre) > code {
+        word-wrap: break-word;
       }
       img {
         width: 100%;

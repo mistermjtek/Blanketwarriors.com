@@ -1,10 +1,6 @@
 .list {
   margin: 0 auto 0 auto;
-  h1 {
-    font-size: 2.5em;
-    font-weight: 300;}
-  h3 { font-weight: 300; }
-  h4 { font-weight: 300; }
+  h1 { font-size: 2.5em; }
   a {
     background-color: #FFF;
     color: #000;
@@ -24,7 +20,8 @@
     }
 
     .info {
-      font-family: 'Merriweather', 'serif';
+      font-family: "freight-text-pro", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+      font-weight: normal;
     }
   }
 

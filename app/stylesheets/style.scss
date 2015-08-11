@@ -1,9 +1,10 @@
 html {
-  font-size: 16px;
+  font-size: 22px;
 }
 
 body {
-  font-family: "Quattrocento Sans", "Arial", "sans-serif";
+  font-family: "fira-sans", Arial, Helvetica, sans-serif;
+  font-weight: normal;
 
   background: linear-gradient(#5A90F5, #51A0EE);
   color: #FFF;
@@ -13,10 +14,8 @@ body {
   cursor: default;
 }
 
-
 p {
-  font-family: 'Merriweather', 'serif';
-  font-weight: 300;
+  font-family: "freight-text-pro", "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
 h1 {
@@ -56,7 +55,7 @@ h1 {
     width: 100%;
     max-width: 700px;
     position: relative;
-    top: 30%;
+    top: 20%;
   }
 }
 
@@ -72,7 +71,6 @@ h1 {
   z-index: 10;
   float: center;
   a {
-    font-size: 20px;
     color: #F3F4EF;
     padding: 10px 3% 10px 3%;
     position: relative;
