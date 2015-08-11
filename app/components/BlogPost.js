@@ -16,12 +16,11 @@ class BlogPost extends React.Component {
   }
 
   componentDidMount() {
-    /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = 'blanket-warriors';
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
     (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
@@ -38,8 +37,10 @@ class BlogPost extends React.Component {
               <h2>{blogPost.description}</h2>
               <h3><img src={'/assets/Blog' + blogPost.author.image}/> {blogPost.author.name} | {blogPost.date}</h3>
             </header>
-            <Highlight innerHTML={true} className="content"> {blogPost.content} </Highlight>
-            <div id="disqus_thread"></div>
+            <div className="blog-body">
+              <Highlight innerHTML={true} className="content"> {blogPost.content} </Highlight>
+              <div id="disqus_thread"></div>
+            </div>
           </div>
         );
       }
