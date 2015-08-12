@@ -1,4 +1,4 @@
-.blog-post {
+.blog-post.page {
   background: #fff;
   color: #000;
 
@@ -29,19 +29,17 @@
     }
   }
 
-  .blog-body {
+  div.blog-body {
     padding: 20px auto 20px auto;
     margin: 100px auto 0 auto;
     max-width: 700px;
     display: block;
 
     .content {
-      letter-spacing: .01rem;
       display: inline;
       font-size: 22px;
-      line-height: 1.7;
+      line-height: 1.5;
       font-family: "jaf-bernino-sans";
-
       h1{
         text-align: left;
         margin: 0 0 25px 0;

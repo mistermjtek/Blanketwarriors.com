@@ -4,62 +4,32 @@
   line-height: 1.5;
   display: block;
   .content {
-    max-width: 700px;
-    display: block;
-    text-align: center;
     margin: 0 auto 0 auto;
     padding: 50px 0 50px 0;
-    .title {
-      line-height: 1.2;
-      h1{
-        margin: 0;
-        font-size: 3em;
-      }
-      h2{ margin: 0; }
-      img{ margin: 0; }
-    }
-    p{
-      text-align: left;
-    }
+    display: block;
+    max-width: 700px;
+    text-align: center;
+    h1 {font-size: 3em;}
+    p{ text-align: left; }
     img {
       max-width: 90%;
-      margin: 20px;
-      border: 2px solid black;
-    }
+      margin: 20px;}
     .links {
       img {
         border: none;
         max-width: 30px;
-        margin: 10px;
-      }
+        margin: 10px; }
     }
   }
-}
-
-.github-mark {
-  width: 30px;
 }
 
 .big-daddy {
-  background: #000;
-  background-image: url("http://a1star.com/images/starsglow1.gif");
-  background-repeat: repeat;
-
-  padding: 0;
-  .title {
-    padding: 0;
-    margin: 0 0 40px 0;
-    img{
-      width: 100vw;
-      max-width: 100%;
-      margin: 0px;
-      border: none;
-    }
-  }
-  .content {
-    p{ text-align: center; }
-    padding: 0 20% 40px 20%;
-  }
+  background: #000 url("http://a1star.com/images/starsglow1.gif") repeat;
+  padding-top: 0;
+  .title img {
+    padding-top: 0;
+    width: 100%;}
+  .content p { text-align: center; }
 }
 
 .tokki {
@@ -71,14 +41,9 @@
   background: #fff;
   color: #000;
   .content {
-    .title {
-      margin: 0 0 40px 0;
-      img{ max-width: 90%; }
-    }
-    img {
-      border: none;
-      max-width: 200px;
-    }
+    .title { margin-bottom:40px; }
+    .title img{ max-width: 90%; }
+    img { max-width: 200px; }
   }
 }
 

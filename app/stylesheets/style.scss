@@ -1,26 +1,16 @@
 html {
   font-size: 22px;
+  font-family: "fira-sans", Arial, Helvetica, sans-serif;
+  p{font-family: "freight-text-pro", "Palatino Linotype", "Book Antiqua", Palatino, serif;}
 }
 
 body {
-  font-family: "fira-sans", Arial, Helvetica, sans-serif;
-  font-weight: normal;
-
   background: linear-gradient(#5A90F5, #51A0EE);
   color: #FFF;
 
   padding: 0px;
   margin: 0px;
   cursor: default;
-}
-
-p {
-  font-family: "freight-text-pro", "Palatino Linotype", "Book Antiqua", Palatino, serif;
-}
-
-h1 {
-  text-align: center;
-  font-size: 4.5em;
 }
 
 .page {
@@ -33,11 +23,26 @@ h1 {
   position: absolute;
   left: 0;
   top: 0;
-  height: 100vh;
-  min-height: 300px;
-  img{
+  height: 100%;
+  min-height: 600px;
+  .content {
+    margin: 0 auto 0 auto;
     position: relative;
-    top: 30%;
+    top: 50%;
+    transform: translateY(-50%);
+    .title {
+      z-index: 10;
+      text-align: center;
+      font-size: 4.5em;
+      margin: 10px 0 0 0;
+    }
+    .logo{
+      display: block;
+      margin: -160px auto -160px auto;
+      padding: 0;
+      max-width: 400px;
+      max-height: 400px
+    }
   }
 }
 
@@ -47,18 +52,21 @@ h1 {
   left: 0;
   top: 0;
   width: 100%;
-  height: 100vh;
-  min-height: 300px;
+  height: 100%;
   .content {
     margin: 0 auto 0 auto;
-    padding: 0;
-    width: 100%;
+    width: 95%;
     max-width: 700px;
     position: relative;
     top: 20%;
+    h1 {
+      text-align: center;
+      font-size: 2.5em;}
+    p {
+
+    }
   }
 }
-
 
 /* Navigation */
 #menu {

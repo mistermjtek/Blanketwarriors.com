@@ -6,6 +6,8 @@ import Highlight from './Highlight.js'
 class BlogPost extends React.Component {
   constructor() {
     super();
+    this.disqus_shortname = 'blanket-warriors';
+    this.dsq;
   }
 
   blogPost() {
@@ -16,14 +18,21 @@ class BlogPost extends React.Component {
   }
 
   componentDidMount() {
-    var disqus_shortname = 'blanket-warriors';
-    (function() {
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
+    if(document.getElementById('disqus')){
+      DISQUS.reset({
+        reload: true,
+        config: function () {}
+      });
+      return;
+    }
+    this.dsq = document.createElement('script');
+    _.assign(this.dsq, {
+      id: 'disqus',
+      type: 'text/javascript',
+      async: true,
+      src: '//' + this.disqus_shortname + '.disqus.com/embed.js'
+    });
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(this.dsq);
   }
 
   render() {

@@ -7,7 +7,6 @@ import HtmlComponent from './components/Html';
 import path from 'path';
 
 const server = express();
-
 server.use(function(req, res, next) {
   console.log(req.path);
   next();

@@ -1,6 +1,6 @@
 .list {
   margin: 0 auto 0 auto;
-  h1 { font-size: 2.5em; }
+  h1 { font-size: 1em; }
   a {
     background-color: #FFF;
     color: #000;
@@ -11,18 +11,6 @@
     text-align: center;
     text-decoration: none;
     transition: all 0.2s ease;
-
-    img {
-      vertical-align: middle;
-      height: 40px;
-      width: 40px;
-      border-radius: 100%;
-    }
-
-    .info {
-      font-family: "freight-text-pro", "Palatino Linotype", "Book Antiqua", Palatino, serif;
-      font-weight: normal;
-    }
   }
 
   a:hover {
