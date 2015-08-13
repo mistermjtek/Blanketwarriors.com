@@ -34,7 +34,7 @@ project.component = React.createClass({
           <p>Tokki is built using Angular.js, Node.js with Express, Socket.io, and Firebase.</p>
           <div className="links">
             <a href={project.link.repository}><img src="/assets/images/icons/GitHub-Mark-Light.svg"/></a>
-            <a href={project.link.application}><img src="/assets/favicon.png"/></a>
+            <a href={project.link.application}><img src="/assets/images/phant.png"/></a>
           </div>
         </div>
       </div>

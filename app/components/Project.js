@@ -12,7 +12,7 @@ class Project extends React.Component {
 
   render() {
     let project = this.project();
-    return React.createElement(project.component, _.extend({}, this.props, {project: project}));
+    return React.createElement(project.component, _.assign({}, this.props, {project: project}));
   }
 }
 

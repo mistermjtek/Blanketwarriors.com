@@ -8,6 +8,7 @@ class BlogPost extends React.Component {
     super();
     this.disqus_shortname = 'blanket-warriors';
     this.dsq;
+    this.addDisqus = _.bind(this.addDisqus, this);
   }
 
   blogPost() {
@@ -17,13 +18,12 @@ class BlogPost extends React.Component {
     });
   }
 
-  componentDidMount() {
+  addDisqus() {
     if(document.getElementById('disqus')){
-      DISQUS.reset({
+      return DISQUS.reset({
         reload: true,
         config: function () {}
       });
-      return;
     }
     this.dsq = document.createElement('script');
     _.assign(this.dsq, {
@@ -34,6 +34,8 @@ class BlogPost extends React.Component {
     });
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(this.dsq);
   }
+
+  componentDidMount() { this.addDisqus(); }
 
   render() {
     const blogPost = this.blogPost();
@@ -54,7 +56,7 @@ class BlogPost extends React.Component {
         );
       }
     }
-    return React.createElement(Component, _.extend({}, this.props, {blogPost: blogPost}));
+    return React.createElement(Component, _.assign({}, this.props, {blogPost: blogPost}));
   }
 }
 

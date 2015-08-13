@@ -29,7 +29,7 @@ project.component = React.createClass({
           <p>and replaces it with the superior word "Daddy".</p>
           <img alt="bigDaddy3" src="/assets/projects/bigDaddy/bigDaddy3.png"/>
           <div className="links">
-            <a href="http://ivebencrazy.github.io/BigDaddy/"><img src="/assets/favicon.png"/></a>
+            <a href="http://ivebencrazy.github.io/BigDaddy/"><img src="/assets/images/phant.png" /></a>
             <a href={project.link.repository}><img src="/assets/images/icons/GitHub-Mark-Light.svg"/></a>
             <a href={project.link.application}><img src="/assets/images/icons/Chrome-Web-Store.png"/></a>
           </div>
