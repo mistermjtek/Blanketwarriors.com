@@ -1,7 +1,6 @@
 .blog-post.page {
   background: #fff;
   color: #000;
-
   line-height: 1.5;
 
   header.title {
@@ -22,7 +21,7 @@
       width: 40px;
       border-radius: 100%; }
 
-    @media (max-width: 767px) {
+    @media (max-width: 800px) {
       h1 { font-size: 2em; }
       h2 { font-size: 1em; }
       h3 { font-size: .8em; }

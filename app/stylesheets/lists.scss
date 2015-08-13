@@ -1,10 +1,70 @@
+.list.projects {
+  padding-top: 75px;
+  > .bigLink {
+    text-align: center;
+    h1 { float: none; }
+  }
+}
+
 .list {
+  background-color: #71A2FF;
+  min-height: 100%;
   margin: 0 auto 0 auto;
-  h1 { font-size: 1em; }
+  padding: 0 0 40px 0;
+  text-align: center;
+
+  a .tags {
+    float: right;
+  }
+  > .tags {
+    display: inline;
+    padding: 10px;
+    margin: 0;
+    display: block;
+    .tag:hover {
+      background-color: #999;
+    }
+  }
+  .tags {
+    list-style: none;
+    .tag {
+      display: inline;
+      font-size: .5em;
+      margin: 5px;
+      padding: 1px 3px 1px 3px;
+      border-radius: 4px;
+      background-color: #eee;
+      color: #222;
+    }
+  }
+
+  .searchWrapper {
+    background-color: #71A2FF;
+    padding: 20px 0 20px 0;
+    .search {
+      width: 300px;
+      display: inline;
+      padding: 5px;
+      font-size: .8em;
+      border: 2px solid #ddd;
+      border-radius: 10px
+    }
+  }
+
+  h1 {
+    font-size: 1em;
+    float: left;
+    padding-left: 20px;
+  }
+  p {
+    font-size: .5em;
+    font-weight: 300;
+    display: inline;
+  }
   a {
     background-color: #FFF;
     color: #000;
-    border: 2px solid #000;
+    border: 2px solid #ddd;
     display: inherit;
     overflow: hidden;
     width: 100%;
@@ -19,16 +79,10 @@
     transition: all 0.5s ease;
   }
 
-  .link {
-    display: inline-block;
-    margin: 21px 21px 21px 21px;
-    width: 300px;
-  }
-
   .bigLink {
+    max-width: 1000px;
     display: block;
     width: 90%;
-    margin: 21px auto 21px auto;
+    margin: 0 auto 21px auto;
   }
 }
-
