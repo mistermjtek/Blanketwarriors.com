@@ -18,7 +18,7 @@ class Html extends React.Component {
           <script src="//use.typekit.net/uyv6nqe.js"></script>
           <script src="/assets/fonts.js"></script>
           <link rel="stylesheet" type="text/css" href="/assets/stylesheets/prism.css" />
-          <link href="/styles.css" type="text/css/" rel="stylesheet" />
+          <link href="/styles.css" type="text/css" rel="stylesheet" />
 
         </head>
         <body>
