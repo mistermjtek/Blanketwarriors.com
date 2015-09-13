@@ -1,3 +1,8 @@
+// Layout.js
+// ---------
+
+// Wraps the router views.  This is what is directly included in the body tag.
+
 'use strict';
 import React from 'react';
 import Router from 'react-router';

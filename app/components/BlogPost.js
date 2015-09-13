@@ -1,3 +1,10 @@
+// BlogPost.js
+// ---------
+
+// A single blog post.  This is a larger file because we have something like a
+// template for blog posts, and we're dealing with both syntax highlighting and
+// comments.
+
 'use strict';
 import _ from 'lodash';
 import React from 'react';
@@ -11,6 +18,7 @@ class BlogPost extends React.Component {
     this.addDisqus = _.bind(this.addDisqus, this);
   }
 
+  // Find the blog post from Collections.
   blogPost() {
     let name = this.props.params.name;
     return _.find(this.props.collections.BlogPosts, function(p) {
@@ -18,6 +26,7 @@ class BlogPost extends React.Component {
     });
   }
 
+  // Disqus setup and use.
   addDisqus() {
     if(document.getElementById('disqus')){
       return DISQUS.reset({

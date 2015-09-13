@@ -1,3 +1,8 @@
+// Home.js
+// ---------
+
+// Basic landing page.  The default route.
+
 'use strict';
 import React from 'react';
 

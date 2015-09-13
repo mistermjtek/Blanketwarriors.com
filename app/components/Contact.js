@@ -1,3 +1,8 @@
+// Contact.js
+// ---------
+
+// Basic page.  Is not currently implemented into the site.
+
 'use strict';
 import React from 'react';
 

@@ -1,3 +1,9 @@
+// NotFound.js
+// ---------
+
+// Really exciting NotFound page.
+// Need to update to reflect style of the main page.
+
 'use strict';
 import React from 'react';
 

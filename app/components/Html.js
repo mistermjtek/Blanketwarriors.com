@@ -1,3 +1,13 @@
+// Html.js
+// ---------
+
+// Html.js wraps all other components on server-rendered pages.  It is never
+// used client-side.  Includes all headers and script tags.
+
+// Script tags for fonts are run at the beginning in order to avoid having
+// fonts changing after page load.  It DOES slow down the page load, and it would
+// be preferrable to get fonts from another source than typekit for that reason.
+
 'use strict';
 import React from 'react';
 
@@ -19,7 +29,6 @@ class Html extends React.Component {
           <script src="/assets/fonts.js"></script>
           <link rel="stylesheet" type="text/css" href="/assets/stylesheets/prism.css" />
           <link href="/styles.css" type="text/css" rel="stylesheet" />
-
         </head>
         <body>
           <div dangerouslySetInnerHTML={{__html: this.props.markup}}></div>

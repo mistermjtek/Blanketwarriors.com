@@ -1,3 +1,8 @@
+// About.js
+// ---------
+
+// Basic about page.  Needs an update.
+
 'use strict';
 import React from 'react';
 

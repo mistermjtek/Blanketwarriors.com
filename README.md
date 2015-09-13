@@ -3,7 +3,7 @@
 
 ## Usage
   1. `npm install`
-  2. `git clone https://github.com/Blanket-Warriors/Blog app/assets/Blog`
+  2. `git clone https://github.com/Blanket-Warriors/Blog assets/Blog`
   3. `npm start`
   4. Refresh the blog with: `npm run build`
 
@@ -26,3 +26,9 @@ Here are some of the technologies we used, and a little background on our though
 
 ### Prism + Marked
   Bloginator.js uses marked to convert the blog post markdown from github into html strings we can render in React.  Prism makes sense for syntax highlighting just because it's pretty, fast, and easy to use.
+
+## Roadmap
+ - This usage of React Router deprecated
+ - We need better automation and tests
+ - The about page is not built out
+ - The Projects and Blog menus are boring

@@ -1,3 +1,9 @@
+// Project.js
+// ---------
+
+// Hosts each individual project page.  Unrelated to Projects, which is a list
+// of all projects.
+
 'use strict';
 import _ from 'lodash';
 import React from 'react';
@@ -5,6 +11,8 @@ import React from 'react';
 class Project extends React.Component {
   project() {
     let name = this.props.params.name;
+
+    // Find the project from Collections
     return _.find(this.props.collections.Projects, function(p) {
       return p.name === name;
     })

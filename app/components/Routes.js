@@ -1,3 +1,11 @@
+// Routes.js
+// ---------
+
+// Routes.js is the starting point for all the routes.  It is used by
+// both client.js and server.js to run the routes.  It wraps the changing views
+// with the Layout component, which includes such things as the navigation bar.
+// Passes Collections.js through to be used in Project and Blog routes.
+
 'use strict';
 import React from 'react';
 import Router from 'react-router';

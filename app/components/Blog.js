@@ -1,3 +1,8 @@
+// Blog.js
+// ---------
+
+// The list of blog posts.  Unrelated to BlogPost.js
+
 'use strict';
 import _ from 'lodash';
 import React from 'react';
@@ -17,7 +22,7 @@ class Blog extends React.Component {
     this.resetSearch = _.bind(this.resetSearch, this);
   }
 
-  // Takes each unfiltered item and returns a boolean for matching search criteria
+  // Takes each unfiltered item and returns a boolean for matching search criteria.
   filter(item) {
     var search = this.state.search;
     var check = function(toCheck) {
@@ -34,7 +39,7 @@ class Blog extends React.Component {
     return check([item.title, item.author.name, item.date, item.tags]);
   }
 
-  // Update functions for filtering
+  // Updates filtering
   onSearchUpdate(event) {
     this.setState({search: event.target.value}, _.bind(function(){
       this.setState({
@@ -43,6 +48,7 @@ class Blog extends React.Component {
     }, this));
   }
 
+  // Updates filtering
   onTagUpdate(event) {
     this.setState({search: event.target.innerText}, _.bind(function(){
       this.setState({
@@ -51,6 +57,7 @@ class Blog extends React.Component {
     }, this));
   }
 
+  // Updates filtering
   resetSearch() {
     this.setState({search: ''}, _.bind(function(){
       this.setState({
@@ -62,6 +69,7 @@ class Blog extends React.Component {
   render() {
     let blogPosts = this.state.search ? this.state.filtered : this.state.unfiltered;
     let tags = _.reduce(this.state.unfiltered, function(total, blogPost) {
+      // `https://lodash.com/docs#union`
       return _.union(total, blogPost.tags);
     });
 

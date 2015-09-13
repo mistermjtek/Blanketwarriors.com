@@ -1,3 +1,9 @@
+// Collections.js
+// ---------
+
+// Organizes blog posts and projects.  Projects are included individually for
+// more customization.  Blog Content is the result of running Bloginator.js.
+
 'use strict';
 import bigDaddy from './projects/bigDaddy';
 import tokki from './projects/tokki';

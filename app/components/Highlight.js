@@ -1,3 +1,8 @@
+// Highlight.js
+// ---------
+
+// Uses Prism for syntax highlighting.  Used in BlogPost.js
+
 'use strict';
 import React from 'react';
 import Prism from '../lib/prism.js';

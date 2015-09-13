@@ -1,3 +1,9 @@
+// Bloginator.js
+// ---------
+
+// Reads all of our markdown blog posts with relative image paths, converts them
+// to html strings, and writes a javascript object with blog information.
+
 'use strict';
 var marked = require('marked').setOptions({ langPrefix: 'language-' });
 var prism = require('./lib/prism.js');
