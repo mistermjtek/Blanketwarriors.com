@@ -9,43 +9,38 @@
 'use strict';
 import express from 'express';
 import React from 'react';
-import Router from 'react-router';
-import Routes from './components/Routes';
+import { Router, RoutingContext, match } from 'react-router';
+import createLocation from 'history/lib/createLocation';
 import HtmlComponent from './components/Html';
+import Routes from './components/Routes';
 import path from 'path';
 
 const server = express();
 
-// Logging out requests just for reference.
+// Loggs out requests just for reference.
 server.use(function(req, res, next) {
   console.log(req.path);
   next();
 });
 
-// Serve our static files
+// Serves our static files
 server.use('/', express.static(path.join(__dirname, '../build/public')));
 server.use('/assets', express.static(path.join(__dirname, '../assets')));
 
-// Middleware runs our router on all other requests.
+// Middleware that runs our router on all other requests.
 server.use(function(request, response){
 
-  // THIS IS A DEPRECATED USAGE OF REACT ROUTER.  WILL FIX.
-  // `https://github.com/rackt/react-router/blob/master/UPGRADE_GUIDE.md`
+  let location = createLocation(request.url);
+  let routes = <Router>{Routes}</Router>;
 
-  // Root: The component resulting from React Router
-  // State: The state of the component
-  Router.run(Routes, request.path, function(Root, state) {
-    let bodyElement = React.createFactory(Root)({
-      params: state.params
-    });
+  // Matches the React-Router route to the path
+  match({routes, location}, (error, redirectLocation, renderProps) => {
 
     // Renders the wrapped component into an HTML string.
-    let html = React.renderToStaticMarkup(
-      <HtmlComponent markup={React.renderToString(bodyElement)} />
-    );
-
-    response.send(html);
-  });
+    response.send(React.renderToStaticMarkup(
+      <HtmlComponent markup={ React.renderToString(<RoutingContext {...renderProps}/>) } />
+    ));
+  })
 });
 
 let port = process.env.PORT || 2000;

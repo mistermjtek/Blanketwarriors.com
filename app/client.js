@@ -7,13 +7,11 @@
 
 'use strict';
 import React from 'react';
-import Router from 'react-router';
+import {Router} from 'react-router';
+import createBrowserHistory from 'history/lib/createBrowserHistory';
 import Routes from './components/Routes';
 import './stylesheets/style.scss';
 
-// THIS IS A DEPRECATED USAGE OF REACT ROUTER.  WILL FIX.
-// `https://github.com/rackt/react-router/blob/master/UPGRADE_GUIDE.md`
-Router.run(Routes, Router.HistoryLocation, function(Root) {
-  React.render(<Root />, document.body);
-});
+// Renders the React-Router using the HTML browser history.
+React.render(<Router history={createBrowserHistory()}>{Routes}</Router>, document.body);
 
