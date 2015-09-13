@@ -1,7 +1,8 @@
+var fs = require('fs');
+var _ = require('lodash');
+var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var path = require('path');
-var fs = require('fs');
 
 var nodeModules = {};
 fs.readdirSync('node_modules')
@@ -12,53 +13,64 @@ fs.readdirSync('node_modules')
     nodeModules[mod] = 'commonjs ' + mod;
   });
 
+var defaultConfig = {
+  module: {
+    loaders: [
+      { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader', sourceMap: true},
+      { test: /\.scss$/, loader: ExtractTextPlugin.extract('css!sass') },
+      { test:  /\.json$/, loader: 'json-loader' }
+    ]
+  },
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  }
+}
+
 var clientConfig = {
   entry: {
-    'react': path.resolve(__dirname, 'app/client.js')
+    'react': path.resolve(__dirname, 'app/client.jsx')
   },
   output: {
     path: path.resolve(__dirname,  'build', 'public'),
     filename: 'bundle.js',
   },
-  module: {
-    loaders: [
-      { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader', sourceMap: true},
-      { test: /\.scss$/, loader: ExtractTextPlugin.extract('css!sass') }
-    ]
-  },
   plugins: [
-    new ExtractTextPlugin('styles.css', { allChunks: true })
+    new ExtractTextPlugin('styles.css', { allChunks: true }),
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    })
   ]
 };
 
 var serverConfig = {
   entry: {
-    server: path.resolve(__dirname, 'app/server.js')
+    server: path.resolve(__dirname, 'app/server.jsx')
   },
-  target: 'node',
-  node: { __dirname: true },
   output: {
     path: path.resolve(__dirname,  'build'),
-    filename: 'server.js',
+    filename: '[name].js',
   },
-  module: {
-    loaders: [
-      { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader'},
-      { test:  /\.json$/, loader: 'json-loader' }
-    ]
-  },
-  externals: nodeModules
+  target: 'node',
+  externals: nodeModules,
+  node: {
+    __dirname: true
+  }
 };
 
-if(process.env.NODE_ENV !== 'production') {
-  clientConfig.devtool = 'source-map';
+//if(process.env.NODE_ENV === 'DEVELOPMENT') {
+  clientConfig.devtool = '#eval-source-map';
   clientConfig.debug = true;
 
-  serverConfig.devtool = 'source-map';
+  serverConfig.devtool = '#evalsource-map';
   serverConfig.debug = true;
-}
+//}
 
 module.exports = {
-  client: clientConfig,
-  server: serverConfig
+  default: defaultConfig,
+  client: _.defaultsDeep(clientConfig, defaultConfig),
+  server: _.defaultsDeep(serverConfig, defaultConfig)
 }

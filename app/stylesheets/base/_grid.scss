@@ -1,0 +1,15 @@
+/* GLOBALS
+======================================================================= */
+$total-columns: 12;
+
+$susy: (
+	columns: $total-columns,
+	global-box-sizing: border-box // use border-box
+);
+
+// Makes border-box properties
+@include border-box-sizing;
+
+.wrapper {
+	@include container;
+}

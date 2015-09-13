@@ -1,6 +1,6 @@
 'use strict';
 import React from 'react';
-import Highlight from '../Highlight.js'
+import Highlight from '../Highlight';
 
 var project = {
   name: 'big-daddy',
@@ -16,25 +16,31 @@ var project = {
 };
 
 project.component = React.createClass({
-  render: function() {
+  render() {
     return (
-      <div className={project.name + ' project'}>
-        <div className="title">
+      <article className={project.name + ' wrapper project'}>
+
+        <header>
           <img alt="bigDaddy1" src="/assets/projects/bigDaddy/bigDaddy1.png"/>
-        </div>
-        <div className="content">
+        </header>
+
+        <section>
           <h2>Big Daddy is the daddy of all Chrome extensions.</h2>
           <p>He takes every mention of the word "Data", </p>
           <img alt="bigDaddy2" src="/assets/projects/bigDaddy/bigDaddy2.png"/>
           <p>and replaces it with the superior word "Daddy".</p>
           <img alt="bigDaddy3" src="/assets/projects/bigDaddy/bigDaddy3.png"/>
+        </section>
+
+        <footer>
           <div className="links">
             <a href="http://ivebencrazy.github.io/BigDaddy/"><img src="/assets/images/phant.png" /></a>
             <a href={project.link.repository}><img src="/assets/images/icons/GitHub-Mark-Light.svg"/></a>
             <a href={project.link.application}><img src="/assets/images/icons/Chrome-Web-Store.png"/></a>
           </div>
-        </div>
-      </div>
+        </footer>
+
+      </article>
     );
   }
 })

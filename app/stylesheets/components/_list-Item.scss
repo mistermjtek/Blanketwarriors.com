@@ -1,0 +1,17 @@
+a.list-item {
+	@include container;
+  display: block;
+  background-color: $white;
+  color: $black;
+	margin-bottom: 21px;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background-color .8s ease-out;
+
+	&:hover {
+	  background-color: $blue2;
+	  transition: all .3s ease-out;
+	}
+}
+
+

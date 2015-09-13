@@ -1,123 +1,41 @@
-html {
-  font-size: 22px;
-  font-family: "fira-sans", Arial, Helvetica, sans-serif;
-  p{font-family: "freight-text-pro", "Palatino Linotype", "Book Antiqua", Palatino, serif;}
-}
+/* VENDOR - Default fall-backs and external files
+======================================================================= */
+@import '~susy/sass/susy';
+@import 'vendor/prism.css';
 
-body {
-  background: #5A90F5;
-  color: #FFF;
-  padding: 0px;
-  margin: 0px;
-  cursor: default;
-}
+/* BASE - Setup work
+======================================================================= */
+@import 'base/_reset.scss';
+@import 'base/_variables.scss';
+@import 'base/_typography.scss';
+@import 'base/_grid.scss';
 
-.page {
-  margin: 0px;
-  padding: 0px;
-  width: 100%;
-}
+/* HELPERS - Files for utilities and helpers
+======================================================================= */
+@import 'helpers/_mixins.scss';
+@import 'helpers/_functions.scss';
+@import 'helpers/_placeholders.scss';
 
-.home {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  min-height: 600px;
-  .content {
-    margin: 0 auto 0 auto;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    .title {
-      z-index: 10;
-      text-align: center;
-      font-size: 4.5em;
-      margin: 10px 0 0 0;
-    }
-    .logo{
-      display: block;
-      margin: -160px auto -160px auto;
-      padding: 0;
-      max-width: 400px;
-      max-height: 400px
-    }
-  }
-}
+/* COMPONENTS - Re-usable site elements.
+======================================================================= */
+@import 'components/_list.scss';
+@import 'components/_search.scss';
+@import 'components/_buttons.scss';
+@import 'components/_list-item.scss';
+@import 'components/_navigation.scss';
 
-.about {
-  color: #fff;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  .content {
-    margin: 0 auto 0 auto;
-    width: 95%;
-    max-width: 700px;
-    position: relative;
-    top: 20%;
-    h1 {
-      text-align: center;
-      font-size: 2.5em;}
-    p {
+/* LAYOUT - Structure and layout files.
+======================================================================= */
+@import 'layout/_body.scss';
+@import 'layout/_page.scss';
+@import 'layout/_footer.scss';
+@import 'layout/_article.scss';
 
-    }
-  }
-}
-
-/* Navigation */
-#menu {
-  text-align: center;
-  background: #5A90F5;
-  padding: 20px 0 25px 0;
-  margin: 0;
-  width: 100%;
-  height: 20px;
-  z-index: 10;
-  float: center;
-  a {
-    color: #F3F4EF;
-    padding: 10px 3% 10px 3%;
-    position: relative;
-    z-index: 10;
-    text-decoration: none;
-  }
-  a:before {
-    content: "";
-    width: 70%;
-    height: 2px;
-    position: absolute;
-    bottom: 15%;
-    left: 15%;
-    background-color: #fff;
-    opacity: 0.3;
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: all 0.3s ease-out 0s;
-  }
-
-  a:hover:before {
-    visibility: visible;
-    transform: scaleX(1);
-  }
-
-  a.selected:before {
-    content: "";
-    width: 70%;
-    height: 2px;
-    position: absolute;
-    bottom: 15%;
-    left: 15%;
-    background-color: #fff;
-    opacity: 1;
-    visibility: visible;
-    transform: scaleX(1);
-    transition: all 0.3s ease-out 0s;
-  }
-}
-
-@import './blogPost.scss';
-@import './lists.scss';
-@import './projects.scss';
+/* PAGES - The different pages on the site.
+======================================================================= */
+@import 'pages/_home.scss';
+@import 'pages/_blog.scss';
+@import 'pages/_about.scss';
+@import 'pages/_project.scss';
+@import 'pages/_blogPost.scss';
+@import 'pages/_projects.scss';

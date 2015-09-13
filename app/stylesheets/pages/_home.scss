@@ -1,0 +1,16 @@
+.home.content {
+	@include size(100%);
+	text-align: center;
+}
+
+.home.content h1 {
+	@include absolute-align(50%, 40%);
+	width: span(10);
+	z-index: $zIndexTitle;
+}
+
+.home.content img {
+	@include absolute-align(50%, 50%);
+	width: span(8);
+	z-index: $zIndexLogo;
+}

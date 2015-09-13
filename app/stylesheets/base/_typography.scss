@@ -1,0 +1,71 @@
+/* TYPEOGRAPHY FONTS
+======================================================================= */
+$base-font-family-sans: "fira-sans", "Lucida Grande", "Arial", "sans-serif";
+$base-font-family-serif: "freight-text-pro", "Palatino Linotype", "Book Antiqua", "Georgia", "serif";
+$base-font-family-code: "source-code-pro", "Consolas", 'Andale Mono WT', 'Andale Mono';
+$base-font-family-fancy: "jaf-bernino-sans", "Helvetica";
+$base-font-weight: 400;
+
+/* TYPEOGRAPHY SCALE
+======================================================================= */
+$typography-scale: (
+	type-base,
+	type-large,
+	type-larger,
+	type-largest,
+	type-jumbo
+);
+
+/* TYPEOGRAPHY RESPONSIVE BASE
+======================================================================= */
+$typography-base: (
+  default: (
+    base-font-size: 16px,
+    vertical-rhythm: 1.414,
+    type-scale: 1.2,
+    min-width: null
+  ),
+  medium: (
+    base-font-size: 18px,
+    vertical-rhythm: 1.5,
+    type-scale: 1.414,
+    min-width: 480px
+  ),
+  large: (
+    base-font-size: 20px,
+    vertical-rhythm: 1.618,
+    type-scale: 1.5,
+    min-width: 960px
+  ),
+  xlarge: (
+    base-font-size: 24px,
+    vertical-rhythm: 1.618,
+    type-scale: 1.618,
+    min-width: 1300px
+  )
+);
+
+/* OTHER TYPEOGRAPHY (TODO)
+======================================================================= */
+$lineHeight-tightest: %type-base;
+$lineHeight-tighter: %type-base;
+$lineHeight-tight: %type-base;
+$lineHeight-baseSans: %type-base;
+$lineHeight-base: %type-base;
+$lineHeight-loose: %type-base;
+$lineHeight-looser: %type-base;
+
+$letterSpacing-tightest: %type-base;
+$letterSpacing-tighter: %type-base;
+$letterSpacing-tight: %type-base;
+$letterSpacing-normal: %type-base;
+$letterSpacing-loose: %type-base;
+$letterSpacing-looser: %type-base;
+
+/* DEFAULT
+======================================================================= */
+body {
+  @extend %type-base;
+  font-family: $base-font-family-sans;
+  font-weight: $base-font-weight;
+}

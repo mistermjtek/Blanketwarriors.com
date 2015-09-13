@@ -1,4 +1,3 @@
-'use strict';
 var path = require('path');
 var gulp = require('gulp');
 var webpack = require('webpack');
@@ -15,28 +14,23 @@ var build = function(done) {
   };
 };
 
-gulp.task('run', ['blog-build', 'server-watch', 'client-watch'], function() {
+gulp.task('nodemon', function() {
   nodemon({
-    execMap: { js: 'node' },
     script: path.join(__dirname, 'build/server.js'),
-  }).on('restart', function() {
-    console.log('Restarted!');
-  });
-});
+    ext: 'js html css',
+    env: {'NODE_ENV': 'development'}
+  })
+})
 
-gulp.task('blog-build', function() {
+gulp.task('client-build', function(done) {
   webpack(config.client).run(function(error, stats) {
-    var inputDir = path.join(__dirname, 'assets/Blog/Posts');;
+    var inputDir = path.join(__dirname, 'assets/Blog/Posts');
     var outputDir = path.join(__dirname, 'app/lib/posts.js');
     var assetDir = '/assets/Blog/';
     bloginator(inputDir, outputDir, assetDir, function() {
-      build()(error, stats);
+      build(done)(error, stats);
     });
   });
-});
-
-gulp.task('client-build', function(done) {
-  webpack(config.client).run(build(done));
 });
 
 gulp.task('server-build', function(done) {
@@ -54,8 +48,7 @@ gulp.task('server-watch', function() {
   });
 });
 
-gulp.task('build', ['client-build', 'server-build']);
-gulp.task('watch', ['client-watch', 'server-watch']);
+gulp.task('build', ['server-build', 'client-build']);
+gulp.task('watch', ['server-watch', 'client-watch']);
 
-
-
+gulp.task('run', ['build', 'server-watch', 'client-watch', 'nodemon']);

@@ -1,6 +1,6 @@
 'use strict';
 import React from 'react';
-import Highlight from '../Highlight.js';
+import Highlight from '../Highlight';
 
 var project = {
   name: 'tokki',
@@ -16,14 +16,16 @@ var project = {
 };
 
 project.component = React.createClass({
-  render: function() {
+  render() {
     return (
-      <div className={project.name + ' project'}>
-        <div className="content">
-          <header className="title">
-            <h1>{project.title}</h1>
-            <h2>{project.description}</h2>
-          </header>
+      <article className={project.name + ' wrapper project'}>
+
+        <header>
+          <h1>{project.title}</h1>
+          <h2>{project.description}</h2>
+        </header>
+
+        <section>
           <p>Tokki is a tool that allows presenters to get a better gauge on how their speaking is being received.  Tokki collects live data from audience members' desktop and mobile devices, and relays that data to a presenter.  This can allow for a presenter to not only adjust presentations on the fly, but also give them the power to look at past events to determine what went well and what didn't.</p>
           <p>On launch, Tokki presents a user with the option to either host a session or enter a session ID to vote and contribute information to a session. </p>
           <img alt="tokki1" src="/assets/projects/tokki/tokki1.png"></img>
@@ -32,12 +34,16 @@ project.component = React.createClass({
           <p>A host is presented with such information as the current Session ID to share, their current average (averaged from the entire audience), and their historical average (averaged from all the current averages).</p>
           <img alt="tokki3" src="/assets/projects/tokki/tokki3.png"></img>
           <p>Tokki is built using Angular.js, Node.js with Express, Socket.io, and Firebase.</p>
+        </section>
+
+        <footer>
           <div className="links">
             <a href={project.link.repository}><img src="/assets/images/icons/GitHub-Mark-Light.svg"/></a>
             <a href={project.link.application}><img src="/assets/images/phant.png"/></a>
           </div>
-        </div>
-      </div>
+        </footer>
+
+      </article>
     );
   }
 });

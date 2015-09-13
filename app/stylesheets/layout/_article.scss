@@ -1,0 +1,38 @@
+article {
+	width: 100%;
+	background: $white;
+	color: $black;
+}
+
+article header {
+	text-align: center;
+	padding: 15% 0 10% 0;
+}
+
+article section {
+	@include center(10);
+  padding: gutter();
+}
+
+article section a {
+  color: $black;
+}
+
+article section pre {
+  margin: 25px 0 25px 0;
+}
+
+article section:not(pre) > code {
+  word-wrap: break-word;
+}
+
+article section img {
+  width: 100%;
+  padding: 20px 0 20px 0;
+  display: block;
+}
+
+article footer {
+	@include center(10);
+  padding: gutter();
+}

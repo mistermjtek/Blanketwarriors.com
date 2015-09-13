@@ -12,7 +12,7 @@ class Project extends React.Component {
   project() {
     let name = this.props.params.name;
 
-    // Find the project from Collections
+    // Finds the project from Collections
     return _.find(this.props.collections.Projects, function(p) {
       return p.name === name;
     })

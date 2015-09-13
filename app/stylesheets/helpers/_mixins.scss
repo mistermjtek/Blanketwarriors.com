@@ -1,0 +1,89 @@
+/* VENDORIZING MIXINS
+======================================================================= */
+@mixin vendorize($property, $value) {
+	-webkit-#{$property}: $value;
+	-moz-#{$property}: $value;
+	-ms-#{$property}: $value;
+	-o-#{$property}: $value;
+	#{$property}: $value;
+}
+
+@mixin box-shadow($value) {
+	@include vendorize(box-shadow, $value);
+}
+
+@mixin transform($value) {
+	@include vendorize(transform, $value);
+}
+
+/* POSITIONING MIXINS
+======================================================================= */
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin center($columns) {
+  width: span($columns);
+  margin: 0 auto;
+}
+
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+
+@mixin absolute-align($horizontal, $vertical) {
+	top: $vertical;
+	left: $horizontal;
+	position: absolute;
+	@include transform(translateX(-50%) translateY(-50%));
+}
+
+@mixin vertical-align-text($height) {
+	height: $height;
+  line-height: $height - 1;
+}
+
+/* COLOR MIXINS
+======================================================================= */
+
+/* ANIMATION MIXINS
+======================================================================= */
+@mixin animatedUnderline($height, $width, $color) {
+	&:before {
+	  content: "";
+	  width: $width;
+	  height: $height;
+	  background-color: $color;
+	  position: absolute;
+	  bottom: 15%;
+	  left: 15%;
+	  opacity: 0.3;
+	  visibility: hidden;
+	  transform: scaleX(0);
+	  transition: all 0.3s ease-out 0s;
+	}
+
+	&:hover:before {
+	  visibility: visible;
+	  transform: scaleX(1);
+	}
+
+	&.selected:before {
+	  content: "";
+	  width: $width;
+	  height: $height;
+	  position: absolute;
+	  bottom: 15%;
+	  left: 15%;
+	  background-color: $color;
+	  opacity: 1;
+	  visibility: visible;
+	  transform: scaleX(1);
+	  transition: all 0.3s ease-out 0s;
+	}
+}
+
+

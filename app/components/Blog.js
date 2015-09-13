@@ -6,7 +6,7 @@
 'use strict';
 import _ from 'lodash';
 import React from 'react';
-import Router from 'react-router';
+import {Link} from 'react-router';
 
 class Blog extends React.Component {
 
@@ -76,12 +76,12 @@ class Blog extends React.Component {
     let blogPostList = _.map(blogPosts, function(blogPost) {
       return (
         <div className="bigLink" key={blogPost.name}>
-          <Router.Link to="blogPost" params={blogPost}>
+          <Link to={"/blog/" + blogPost.name} params={blogPost}>
             <h1 className="item">{blogPost.title}</h1>
             <ul className="tags">
               {_.map(blogPost.tags, function(tag) { return <li className="tag" key={tag}>{tag}</li> })}
             </ul>
-          </Router.Link>
+          </Link>
         </div>
       );
     });

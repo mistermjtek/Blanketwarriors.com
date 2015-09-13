@@ -1,0 +1,20 @@
+/* Navigation */
+nav.nav {
+  @include span(12);
+  height: $navBarHeight;
+  padding: .5rem;
+  background: $blue2;
+  position: absolute;
+  z-index: $zIndexNavBar;
+  text-align: center;
+
+  a {
+    @include animatedUnderline(1px, 70%, $white);
+    padding: .5rem span(1) .5rem span(1);
+    width: span(2);
+    color: $beige;
+    position: relative;
+    text-decoration: none;
+    z-index: $zIndexNavItem;
+  }
+}

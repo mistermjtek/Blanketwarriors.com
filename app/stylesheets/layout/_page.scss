@@ -1,0 +1,6 @@
+div.wrapper.page {
+  @include container;
+  background-color: $blue1;
+  padding-top: $navBarHeight;
+  min-height: 100%;
+}

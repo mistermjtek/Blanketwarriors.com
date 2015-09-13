@@ -3,9 +3,7 @@
 
 ## Usage
   1. `npm install`
-  2. `git clone https://github.com/Blanket-Warriors/Blog assets/Blog`
-  3. `npm start`
-  4. Refresh the blog with: `npm run build`
+  2. `npm start`
 
 Generally you'd want to set up the blog folder with a webhook so that you can update your blog from github.  That's the idea at least.
 
