@@ -1,9 +1,10 @@
-// Client.js
-// ---------
-
-// Client.js serves as the starting point for React on client-side.
-// It runs the React Router and append the resulting component to the DOM.
-// This gets included on the client side via a script tag in components/Html.js
+/**
+ * Client.js
+ *
+ * Client.js serves as the starting point for React on client-side.
+ * It runs the React Router and append the resulting component to the DOM.
+ * This gets included on the client side via a script tag in components/Html.js
+ */
 
 'use strict';
 import React from 'react';

@@ -14,7 +14,7 @@ fs.readdirSync('node_modules')
 
 var clientConfig = {
   entry: {
-    'react': path.resolve(__dirname, 'app/client.js')
+    'react': path.resolve(__dirname, 'app/client.jsx')
   },
   output: {
     path: path.resolve(__dirname,  'build', 'public'),
@@ -28,12 +28,15 @@ var clientConfig = {
   },
   plugins: [
     new ExtractTextPlugin('styles.css', { allChunks: true })
-  ]
+  ],
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  }
 };
 
 var serverConfig = {
   entry: {
-    server: path.resolve(__dirname, 'app/server.js')
+    server: path.resolve(__dirname, 'app/server.jsx')
   },
   target: 'node',
   node: { __dirname: true },
@@ -46,6 +49,9 @@ var serverConfig = {
       { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader'},
       { test:  /\.json$/, loader: 'json-loader' }
     ]
+  },
+  resolve: {
+    extensions: ['', '.js', '.jsx']
   },
   externals: nodeModules
 };
