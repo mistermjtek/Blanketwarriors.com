@@ -1,15 +1,16 @@
-// Layout.js
-// ---------
-
-// Wraps the router views.  This is what is directly included in the body tag.
+/**
+ * Layout
+ *
+ * Wraps the router views.  This is what is directly included in the body tag.
+ */
 
 'use strict';
 import React from 'react';
 import {Router} from 'react-router';
-import Navigation from './Navigation';
+import Navigation from './NavigationBar';
 import collections from './Collections';
 
-class Layout extends React.Component {
+export default class Layout extends React.Component {
   render() {
     return (
       <div>
@@ -19,5 +20,3 @@ class Layout extends React.Component {
     );
   }
 }
-
-export default Layout;

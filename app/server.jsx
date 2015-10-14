@@ -1,10 +1,11 @@
-// Server.js
-// ---------
-
-// Server.js serves as the starting point for React on server-side.
-// It uses Express to serve static built files from /build/public, and static
-// resource files from /assets.  For any other request, it uses React Router,
-// and wraps that with our Html component.
+/**
+ * Server.js
+ *
+ * Server.js serves as the starting point for React on server-side.
+ * It uses Express to serve static built files from /build/public, and static
+ * resource files from /assets.  For any other request, it uses React Router,
+ * and wraps that with our Html component.
+ */
 
 'use strict';
 import express from 'express';
@@ -17,7 +18,7 @@ import path from 'path';
 
 const server = express();
 
-// Loggs out requests just for reference.
+// Logs out requests just for reference.
 server.use(function(req, res, next) {
   console.log(req.path);
   next();
@@ -34,11 +35,11 @@ server.use(function(request, response){
   let routes = <Router>{Routes}</Router>;
 
   // Matches the React-Router route to the path
-  match({routes, location}, (error, redirectLocation, renderProps) => {
+  match( {routes, location}, (error, redirectLocation, renderProps) => {
 
     // Renders the wrapped component into an HTML string.
     response.send(React.renderToStaticMarkup(
-      <HtmlComponent markup={ React.renderToString(<RoutingContext {...renderProps}/>) } />
+      <HtmlComponent markup={React.renderToString(<RoutingContext {...renderProps} />)} />
     ));
   })
 });

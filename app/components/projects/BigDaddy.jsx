@@ -1,6 +1,6 @@
 'use strict';
 import React from 'react';
-import Highlight from '../Highlight.js'
+import Highlight from '../Highlight';
 
 var project = {
   name: 'big-daddy',
@@ -16,7 +16,7 @@ var project = {
 };
 
 project.component = React.createClass({
-  render: function() {
+  render() {
     return (
       <div className={project.name + ' project'}>
         <div className="title">
