@@ -8,16 +8,13 @@
  */
 
 'use strict';
-import path from 'path';
-import React from 'react';
 import express from 'express';
-import ReactDOMServer from 'react-dom/server';
-import createLocation from 'history/lib/createLocation';
+import React from 'react';
 import { Router, RoutingContext, match } from 'react-router';
-
-import Routes from './components/Routes';
-import updateBlog from './lib/updateBlog';
+import createLocation from 'history/lib/createLocation';
 import HtmlComponent from './components/Html';
+import Routes from './components/Routes';
+import path from 'path';
 
 const server = express();
 
@@ -30,20 +27,19 @@ server.use(function(req, res, next) {
 // Serves our static files
 server.use('/', express.static(path.join(__dirname, '../build/public')));
 server.use('/assets', express.static(path.join(__dirname, '../assets')));
-server.use('/update', updateBlog);
 
 // Middleware that runs our router on all other requests.
 server.use(function(request, response){
 
-  let routes = <Router>{Routes}</Router>;
   let location = createLocation(request.url);
+  let routes = <Router>{Routes}</Router>;
 
   // Matches the React-Router route to the path
   match( {routes, location}, (error, redirectLocation, renderProps) => {
 
     // Renders the wrapped component into an HTML string.
-    response.send(ReactDOMServer.renderToStaticMarkup(
-      <HtmlComponent markup={ReactDOMServer.renderToString(<RoutingContext {...renderProps} />)} />
+    response.send(React.renderToStaticMarkup(
+      <HtmlComponent markup={React.renderToString(<RoutingContext {...renderProps} />)} />
     ));
   })
 });

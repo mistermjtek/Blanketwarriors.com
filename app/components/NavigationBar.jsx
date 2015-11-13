@@ -15,7 +15,7 @@ export default class NavBar extends React.Component {
   render() {
     let currentPath = this._reactInternalInstance._context.location.pathname;
     return (
-      <nav className="nav wrapper">
+      <nav id="menu">
         <NavLink to="/" path={currentPath}>Home</NavLink>
         <NavLink to="/about" path={currentPath}>About</NavLink>
         <NavLink to={"/projects"} path={currentPath}>Projects</NavLink>

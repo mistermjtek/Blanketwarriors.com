@@ -8,14 +8,11 @@
 
 'use strict';
 import React from 'react';
-import {render} from 'react-dom';
 import {Router} from 'react-router';
-import {createHistory} from 'history';
+import createBrowserHistory from 'history/lib/createBrowserHistory';
 import Routes from './components/Routes';
 import './stylesheets/style.scss';
 
-let history = createHistory();
-
 // Renders the React-Router using the HTML browser history.
-render(<Router history={history}>{Routes}</Router>, document.getElementsByTagName('main')[0]);
+React.render(<Router history={createBrowserHistory()}>{Routes}</Router>, document.body);
 
