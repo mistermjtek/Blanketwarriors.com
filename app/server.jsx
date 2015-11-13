@@ -15,8 +15,8 @@ import ReactDOMServer from 'react-dom/server';
 import createLocation from 'history/lib/createLocation';
 import { Router, RoutingContext, match } from 'react-router';
 
-import updateBlog from './updateBlog';
 import Routes from './components/Routes';
+import updateBlog from './lib/updateBlog';
 import HtmlComponent from './components/Html';
 
 const server = express();
