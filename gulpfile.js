@@ -9,6 +9,7 @@ var config = require('./webpack.config.js');
 var build = function(done) {
   return function(error, stats) {
     if(error){ return console.log('Error', error); }
+    console.log(stats.toString({colors: true}));
     if(done){ done(); }
   };
 };
