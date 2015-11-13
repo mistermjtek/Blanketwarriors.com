@@ -10,6 +10,7 @@
 'use strict';
 import express from 'express';
 import React from 'react';
+import ReactDOMServer from 'react-dom/server';
 import { Router, RoutingContext, match } from 'react-router';
 import createLocation from 'history/lib/createLocation';
 import HtmlComponent from './components/Html';
@@ -38,8 +39,8 @@ server.use(function(request, response){
   match( {routes, location}, (error, redirectLocation, renderProps) => {
 
     // Renders the wrapped component into an HTML string.
-    response.send(React.renderToStaticMarkup(
-      <HtmlComponent markup={React.renderToString(<RoutingContext {...renderProps} />)} />
+    response.send(ReactDOMServer.renderToStaticMarkup(
+      <HtmlComponent markup={ReactDOMServer.renderToString(<RoutingContext {...renderProps} />)} />
     ));
   })
 });
