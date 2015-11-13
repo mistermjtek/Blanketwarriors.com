@@ -18,14 +18,16 @@ export default class Projects extends React.Component {
 
     const projectList = projects.map( project => {
       return (
-        <div className="bigLink" key={project.name}>
-          <Link to={"/projects/" + project.name} params={project}>
-            <h1>{project.title}</h1>
-          </Link>
-        </div>
+        <Link className="list-item" key={project.name} to={"/projects/" + project.name} params={project}>
+          <h1 className="item-title">{project.title}</h1>
+        </Link>
       );
     });
 
-    return <div className="list projects page">{projectList}</div> ;
+    return (
+      <div className="wrapper projects content page">
+        <div className="list">{projectList}</div>
+      </div>
+    );
   }
 };

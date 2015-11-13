@@ -25,7 +25,6 @@ export default class Blog extends React.Component {
   }
 
   // Takes each unfiltered item and returns a boolean for matching search criteria.
-<<<<<<< HEAD
   searchPredicate(item) {
     var searchState = this.state.search;
     var searchTerms = [item.title, item.author.name, item.date, item.tags];
@@ -35,13 +34,6 @@ export default class Blog extends React.Component {
       if(typeof toCheck === 'string' || typeof toCheck === 'number') {
         // Check globally for the search parameters, ignoring case.
         return Boolean(toCheck.toString().match(new RegExp(searchState, 'ig')));
-=======
-  static searchPredicate(item) {
-    _.reduce([item.title, item.author.name, item.date, item.tags], (toCheck) => {
-      if(typeof toCheck === 'string' || typeof toCheck === 'number') {
-        // Check globally for the search parameters, ignoring case.
-        return Boolean(toCheck.match(new RegExp(this.state.search, 'ig')));
->>>>>>> 6fd58c0... [refactor] Refactors code to conform with the new javascript style guide
       }
       if(typeof toCheck === 'object') {
         // Return the result from nested items.
@@ -50,11 +42,7 @@ export default class Blog extends React.Component {
         });
       }
       return false;
-<<<<<<< HEAD
     };
-=======
-    });
->>>>>>> 6fd58c0... [refactor] Refactors code to conform with the new javascript style guide
   }
 
   // Updates filtering
@@ -87,63 +75,35 @@ export default class Blog extends React.Component {
   render() {
     const blogPosts = this.state.search ? this.state.filtered : this.state.unfiltered;
 
-<<<<<<< HEAD
     // All tags currently being used to describe every post.  Not currently being used.
-=======
->>>>>>> 6fd58c0... [refactor] Refactors code to conform with the new javascript style guide
     const tags = _.reduce(this.state.unfiltered, (total, blogPost) => {
       return _.union(total, blogPost.tags)
     });
 
     const blogPostList = _.map(blogPosts, (blogPost) => {
       return (
-<<<<<<< HEAD
         <Link className="list-item" to={"/blog/" + blogPost.name} key={blogPost.name} params={blogPost}>
           <h1 className="list-item-title">{blogPost.title}</h1>
         </Link>
-=======
-        <div className="bigLink" key={blogPost.name}>
-          <Link to={"/blog/" + blogPost.name} params={blogPost}>
-            <h1 className="item">{blogPost.title}</h1>
-            <ul className="tags">
-              {_.map(blogPost.tags, tag => <li className="tag" key={tag}>{tag}</li>)}
-            </ul>
-          </Link>
-        </div>
->>>>>>> 6fd58c0... [refactor] Refactors code to conform with the new javascript style guide
       );
     });
 
     return (
-<<<<<<< HEAD
       <div className="wrapper blog page">
         <div className="search-wrapper">
           <input
             type="search"
             placeholder="search..."
             className="search-input"
-=======
-      <div className="list blog page">
-        <div className="searchWrapper">
-          <input
-            type="search"
-            placeholder="search..."
-            className="search"
->>>>>>> 6fd58c0... [refactor] Refactors code to conform with the new javascript style guide
             value={this.state.search}
             onChange={this.onSearchUpdate}
           />
         </div>
-<<<<<<< HEAD
 
         <div className="wrapper">
           <div className="list posts">
             {blogPostList.length ? blogPostList : <div>There are no matching blog posts!</div>}
           </div>
-=======
-        <div className="posts">
-          {blogPostList.length ? blogPostList : <div>There are no matching blog posts!</div>}
->>>>>>> 6fd58c0... [refactor] Refactors code to conform with the new javascript style guide
         </div>
       </div>
     );

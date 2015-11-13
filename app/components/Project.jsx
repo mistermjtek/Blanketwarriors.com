@@ -19,9 +19,9 @@ export default class Project extends React.Component {
 
   render() {
     let project = this.getProject();
-    let Component = project.component;
+    let Project = project.component;
 
     let props = _.assign({}, this.props, {project: project});
-    return <Component {...props} />
+    return <Project {...props} />
   }
 }

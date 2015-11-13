@@ -49,11 +49,12 @@ export default class BlogPost extends React.Component {
   render() {
     const blogPost = this.getBlogPost();
 
-    class Component extends React.Component {
+    class BlogPostComponent extends React.Component {
       render() {
         return (
-          <div className="blog-post page">
-            <header className="title">
+          <article className="wrapper post page">
+
+            <header>
               <h1>{blogPost.title}</h1>
               <h2>{blogPost.description}</h2>
               <h3>
@@ -61,16 +62,21 @@ export default class BlogPost extends React.Component {
                 {blogPost.author.name} | {blogPost.date}
               </h3>
             </header>
-            <div className="blog-body">
-              <Highlight innerHTML={true} className="content"> {blogPost.content} </Highlight>
+
+            <section>
+              <Highlight innerHTML={true}> {blogPost.content} </Highlight>
+            </section>
+
+            <footer>
               <div id="disqus_thread" />
-            </div>
-          </div>
+            </footer>
+
+          </article>
         );
       }
     }
 
     let props = _.assign({}, this.props, {blogPost: blogPost});
-    return <Component {...props} />
+    return <BlogPostComponent {...props} />
   }
 }

@@ -17,5 +17,5 @@ import './stylesheets/style.scss';
 let history = createHistory();
 
 // Renders the React-Router using the HTML browser history.
-render(<Router history={history}>{Routes}</Router>, document.getElementById('blankets'));
+render(<Router history={history}>{Routes}</Router>, document.getElementsByTagName('main')[0]);
 
