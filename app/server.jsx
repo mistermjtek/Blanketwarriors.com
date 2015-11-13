@@ -8,14 +8,16 @@
  */
 
 'use strict';
-import express from 'express';
-import React from 'react';
-import ReactDOMServer from 'react-dom/server';
-import { Router, RoutingContext, match } from 'react-router';
-import createLocation from 'history/lib/createLocation';
-import HtmlComponent from './components/Html';
-import Routes from './components/Routes';
 import path from 'path';
+import React from 'react';
+import express from 'express';
+import ReactDOMServer from 'react-dom/server';
+import createLocation from 'history/lib/createLocation';
+import { Router, RoutingContext, match } from 'react-router';
+
+import updateBlog from './updateBlog';
+import Routes from './components/Routes';
+import HtmlComponent from './components/Html';
 
 const server = express();
 
@@ -28,12 +30,13 @@ server.use(function(req, res, next) {
 // Serves our static files
 server.use('/', express.static(path.join(__dirname, '../build/public')));
 server.use('/assets', express.static(path.join(__dirname, '../assets')));
+server.use('/update', updateBlog);
 
 // Middleware that runs our router on all other requests.
 server.use(function(request, response){
 
-  let location = createLocation(request.url);
   let routes = <Router>{Routes}</Router>;
+  let location = createLocation(request.url);
 
   // Matches the React-Router route to the path
   match( {routes, location}, (error, redirectLocation, renderProps) => {

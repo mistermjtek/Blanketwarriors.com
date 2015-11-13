@@ -8,11 +8,14 @@
 
 'use strict';
 import React from 'react';
+import {render} from 'react-dom';
 import {Router} from 'react-router';
-import createBrowserHistory from 'history/lib/createBrowserHistory';
+import {createHistory} from 'history';
 import Routes from './components/Routes';
 import './stylesheets/style.scss';
 
+let history = createHistory();
+
 // Renders the React-Router using the HTML browser history.
-React.render(<Router history={createBrowserHistory()}>{Routes}</Router>, document.body);
+render(<Router history={history}>{Routes}</Router>, document.getElementById('blankets'));
 

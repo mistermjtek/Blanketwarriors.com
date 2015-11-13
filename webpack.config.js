@@ -61,13 +61,13 @@ var serverConfig = {
   }
 };
 
-//if(process.env.NODE_ENV === 'DEVELOPMENT') {
+if(process.env.NODE_ENV === 'development') {
   clientConfig.devtool = '#eval-source-map';
   clientConfig.debug = true;
 
   serverConfig.devtool = '#evalsource-map';
   serverConfig.debug = true;
-//}
+}
 
 module.exports = {
   default: defaultConfig,

@@ -48,6 +48,7 @@ export default class BlogPost extends React.Component {
 
   render() {
     const blogPost = this.getBlogPost();
+
     class Component extends React.Component {
       render() {
         return (
@@ -69,7 +70,7 @@ export default class BlogPost extends React.Component {
       }
     }
 
-    // TODO: Refactor to avoid using React.createElement
-    return React.createElement(Component, _.assign({}, this.props, {blogPost: blogPost}));
+    let props = _.assign({}, this.props, {blogPost: blogPost});
+    return <Component {...props} />
   }
 }

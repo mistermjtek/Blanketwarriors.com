@@ -19,15 +19,9 @@ export default class Project extends React.Component {
 
   render() {
     let project = this.getProject();
-<<<<<<< HEAD
-    let Project = project.component;
+    let Component = project.component;
 
     let props = _.assign({}, this.props, {project: project});
-    return <Project {...props} />
-=======
-
-    // TODO: Refactor to avoid using React.createElement
-    return React.createElement(project.component, _.assign({}, this.props, {project: project}));
->>>>>>> 6fd58c0... [refactor] Refactors code to conform with the new javascript style guide
+    return <Component {...props} />
   }
 }
