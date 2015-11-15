@@ -1,12 +1,14 @@
+/* About
+======================================================================= */
 .about.wrapper {
 	@include size(100%);
-	padding-top: $navBarHeight * 2;
+	padding-top: $nav-offset;
   text-align: center;
 }
 
 .about .content {
 	@include center(8);
-	margin-top: 100px;
 	margin-bottom: 100px;
+	margin-top: 100px;
 	padding: gutter();
 }

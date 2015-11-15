@@ -1,23 +1,20 @@
+/* Blog Post
+======================================================================= */
 article.post {
-  font-family: $base-font-family-serif;
   margin: auto;
 }
 
 article.post header {
-  background: $blue1;
-  color: $white;
+  background: $background-color-article-header;
+  color: $font-color-article-header;
 
   h3 img {
-    vertical-align: middle;
-    height: 40px;
-    width: 40px;
+    @include size($font-size-larger);
     border-radius: 100%;
+    margin: 5px;
+    vertical-align: middle;
   }
 }
 
-article.post section {
-}
-
-
-article.post footer {
-}
+article.post section {}
+article.post footer {}

@@ -1,0 +1,44 @@
+/* Grid
+======================================================================= */
+$total-columns: 12;
+
+$susy: (
+	columns: $total-columns,
+	global-box-sizing: border-box // use border-box
+);
+
+// Makes border-box properties
+@include border-box-sizing;
+
+.wrapper {
+	@include container;
+}
+
+/* Z-Index Scale
+======================================================================= */
+$z-index-1:   100;
+$z-index-2:   200;
+$z-index-3:   300;
+$z-index-4:   400;
+$z-index-5:   500;
+$z-index-6:   600;
+$z-index-7:   700;
+$z-index-8:   800;
+$z-index-9:   900;
+$z-index-10: 1000;
+
+/* Z-Index Applications
+======================================================================= */
+$z-index-logo:     $z-index-1;
+$z-index-title:    $z-index-2;
+$z-index-nav-bar:  $z-index-3;
+$z-index-nav-item: $z-index-4;
+
+/* Size Applications
+======================================================================= */
+$size-social-icon: 2rem;
+
+/* Positioning Variables
+======================================================================= */
+$nav-padding: $font-size-nav * 0.5;
+$nav-offset:  $font-size-nav * 2;

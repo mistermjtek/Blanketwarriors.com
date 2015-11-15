@@ -1,20 +1,23 @@
-/* Navigation */
+/* Navigation
+======================================================================= */
 nav.nav {
   @include span(12);
-  height: $navBarHeight;
-  padding: .5rem;
-  background: $blue2;
+  background: $background-color-nav;
+  font-size: $font-size-nav;
+  padding: $nav-padding;
   position: absolute;
-  z-index: $zIndexNavBar;
   text-align: center;
+  z-index: $z-index-nav-bar;
+}
 
-  a {
-    @include animatedUnderline(1px, 70%, $white);
-    padding: .5rem span(1) .5rem span(1);
-    width: span(2);
-    color: $beige;
-    position: relative;
-    text-decoration: none;
-    z-index: $zIndexNavItem;
-  }
+/* Navigation Item
+======================================================================= */
+nav.nav a {
+  @include animatedUnderline(1px, 70%, $font-color-nav);
+  color: $font-color-nav;
+  padding: .5rem span(1) .5rem span(1);
+  position: relative;
+  text-decoration: none;
+  width: span(2);
+  z-index: $z-index-nav-item;
 }

@@ -21,15 +21,17 @@ project.component = React.createClass({
       <article className={project.name + ' wrapper project'}>
 
         <header>
-          <img alt="bigDaddy1" src="/assets/projects/bigDaddy/bigDaddy1.png"/>
+          <h1>Big Daddy</h1>
+          <img className="bigDaddy" alt="bigDaddy1" src="/assets/projects/bigDaddy/BigDaddy.png"/>
+          <h2>The daddy of all Chrome extensions.</h2>
         </header>
 
         <section>
-          <h2>Big Daddy is the daddy of all Chrome extensions.</h2>
-          <p>He takes every mention of the word "Data", </p>
-          <img alt="bigDaddy2" src="/assets/projects/bigDaddy/bigDaddy2.png"/>
-          <p>and replaces it with the superior word "Daddy".</p>
-          <img alt="bigDaddy3" src="/assets/projects/bigDaddy/bigDaddy3.png"/>
+          <h3>BIG DADDY REPLACES YOUR DATA WITH YO DADDA</h3>
+          <h4>BEFORE DADDIFICATION</h4>
+          <img alt="bigDaddy2" src="/assets/projects/bigDaddy/before.png"/>
+          <h4>AFTER DADDIFICATION</h4>
+          <img alt="bigDaddy3" src="/assets/projects/bigDaddy/after.png"/>
         </section>
 
         <footer>

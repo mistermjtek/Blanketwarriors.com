@@ -1,0 +1,62 @@
+/* Freight Text Pro
+======================================================================= */
+@font-face {
+  font-family: "Freight Text Pro";
+  src: url("/assets/fonts/Freight-Text-Pro/FreigTexProMedWeb.woff") format("woff"),
+  		 url("/assets/fonts/Freight-Text-Pro/FreigTexProMedWeb.eot");
+}
+
+@font-face {
+  font-family: "Freight Text Pro";
+  font-style:  italic;
+  src: url("/assets/fonts/Freight-Text-Pro/FreigTexProMedItWeb.woff") format("woff"),
+  		 url("/assets/fonts/Freight-Text-Pro/FreigTexProMedItWeb.eot");
+}
+
+@font-face {
+  font-family: "Freight Text Pro";
+  font-weight: bold;
+  src: url("/assets/fonts/Freight-Text-Pro/FreigTexProBoldWeb.woff") format("woff"),
+  		 url("/assets/fonts/Freight-Text-Pro/FreigTexProBoldWeb.eot");
+}
+
+@font-face {
+  font-family: "Freight Text Pro";
+  font-weight: bold;
+  font-style:  italic;
+  src: url("/assets/fonts/Freight-Text-Pro/FreigTexProBoldItWeb.woff") format("woff"),
+  		 url("/assets/fonts/Freight-Text-Pro/FreigTexProBoldItWeb.eot");
+}
+
+/* Fira Sans
+======================================================================= */
+@font-face {
+	font-family: "Fira Sans";
+	src: url("/assets/fonts/Fira-Sans/FiraSans-Light.woff") format('woff');
+}
+
+@font-face {
+	font-family: "Fira Sans";
+	font-style:  italic;
+	src: url("/assets/fonts/Fira-Sans/FiraSans-LightItalic.woff") format('woff');
+}
+
+@font-face {
+	font-family: "Fira Sans";
+	font-weight: bold;
+	src: url("/assets/fonts/Fira-Sans/FiraSans-Medium.woff") format('woff');
+}
+
+@font-face {
+	font-family: "Fira Sans";
+	font-style: italic;
+	font-weight: bold;
+	src: url("/assets/fonts/Fira-Sans/FiraSans-MediumItalic.woff") format('woff');
+}
+
+/* Permanent Marker
+======================================================================= */
+@font-face {
+  font-family: "Permanent Marker";
+  src: url("/assets/fonts/Permanent-Marker/PermanentMarker.ttf");
+}

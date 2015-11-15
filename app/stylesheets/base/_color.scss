@@ -1,0 +1,52 @@
+/* Color Scale (private vars)
+======================================================================= */
+$beige:        	rgb(245, 242, 240);
+$blue:         	rgb(90,  144, 245);
+$blue-light:   	rgb(113, 162, 255);
+$blue-lighter: 	rgb(179, 212, 252);
+$slategray: 	 	rgb(112, 128, 144);
+
+// Grayscale
+$black:        	rgb(0,   0,   0);
+$gray-darker:  	rgb(33,  33,  33);
+$gray-dark:    	rgb(117, 117, 117);
+$gray:         	rgb(189, 189, 189);
+$gray-light:   	rgb(224, 224, 224);
+$gray-lighter: 	rgb(245, 245, 245);
+$white:        	rgb(255, 255, 255);
+
+$beige-80:			rgba(245, 242, 240, 0.8);
+
+/* Color Applications
+======================================================================= */
+$background-color-main:							$blue;
+$background-color-page:							$blue-light;
+$background-color-article: 					$white;
+$background-color-tokki: 						rgb(53, 80, 101);
+$background-color-crockpot: 				rgb(41, 36, 41);
+$background-color-snippet:					$beige;
+$background-color-nav:							$blue;
+$background-color-search:						$blue-light;
+$background-color-list-item: 				$beige;
+$background-color-list-item-hover: 	$beige-80;
+$background-color-article-header:		$blue-light;
+
+$font-color:              	$gray-lighter;
+$font-color-nav:          	$gray-lighter;
+$font-color-search:					$gray-darker;
+$font-color-article:				$gray-darker;
+$font-color-article-header:	$gray-lighter;
+$font-color-list-item:			$gray-darker;
+$font-color-heading-1:    	$gray-darker;
+$font-color-heading-2:    	$gray-darker;
+$font-color-heading-3:    	$gray-darker;
+$font-color-heading-4:    	$gray-darker;
+
+// Snippet Colors
+$red-snippet:    rgb(221, 74,  104);
+$gray-snippet:   rgb(153, 153, 153);
+$blue-snippet:   rgb(0,   119, 170);
+$green-snippet:  rgb(102, 153, 0);
+$brown-snippet:  rgb(166, 127, 89);
+$orange-snippet: rgb(238, 153, 0);
+$purple-snippet: rgb(153, 0,   85);

@@ -1,3 +1,5 @@
+/* Home
+======================================================================= */
 .home.content {
 	@include size(100%);
 	text-align: center;
@@ -5,12 +7,13 @@
 
 .home.content h1 {
 	@include absolute-align(50%, 40%);
+	font-size: $font-size-home-title;
 	width: span(10);
-	z-index: $zIndexTitle;
+	z-index: $z-index-title;
 }
 
 .home.content img {
-	@include absolute-align(50%, 50%);
-	width: span(8);
-	z-index: $zIndexLogo;
+	@include absolute-align(50%, 60%);
+	width: span(6);
+	z-index: $z-index-logo;
 }

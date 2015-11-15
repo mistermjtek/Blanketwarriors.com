@@ -1,37 +1,37 @@
+/* Article
+======================================================================= */
 article {
 	width: 100%;
-	background: $white;
-	color: $black;
+	background: $background-color-article;
+	color: $font-color-article;
 }
 
+/* Header
+======================================================================= */
 article header {
 	text-align: center;
 	padding: 15% 0 10% 0;
 }
 
+/* Section
+======================================================================= */
 article section {
-	@include center(10);
+	@include center(8);
+  font-family: $font-family-serif;
+  font-weight: 300;
+  line-height: $line-height-body;
   padding: gutter();
 }
 
-article section a {
-  color: $black;
-}
-
-article section pre {
-  margin: 25px 0 25px 0;
-}
-
-article section:not(pre) > code {
-  word-wrap: break-word;
-}
-
 article section img {
-  width: 100%;
-  padding: 20px 0 20px 0;
+  border-radius: 3px;
   display: block;
+  margin: 20px 0 20px 0;
+  width: 100%;
 }
 
+/* Footer
+======================================================================= */
 article footer {
 	@include center(10);
   padding: gutter();

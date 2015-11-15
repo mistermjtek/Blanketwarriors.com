@@ -1,4 +1,4 @@
-/* VENDORIZING MIXINS
+/* Vendorizing
 ======================================================================= */
 @mixin vendorize($property, $value) {
 	-webkit-#{$property}: $value;
@@ -16,29 +16,29 @@
 	@include vendorize(transform, $value);
 }
 
-/* POSITIONING MIXINS
+/* Positioning
 ======================================================================= */
 @mixin size($width, $height: $width) {
-  width: $width;
   height: $height;
+  width: $width;
 }
 
 @mixin center($columns) {
-  width: span($columns);
   margin: 0 auto;
+  width: span($columns);
 }
 
 @mixin vertical-align($position: relative) {
+  @include transform(translateY(-50%));
   position: $position;
   top: 50%;
-  @include transform(translateY(-50%));
 }
 
 @mixin absolute-align($horizontal, $vertical) {
-	top: $vertical;
+	@include transform(translateX(-50%) translateY(-50%));
 	left: $horizontal;
 	position: absolute;
-	@include transform(translateX(-50%) translateY(-50%));
+	top: $vertical;
 }
 
 @mixin vertical-align-text($height) {
@@ -46,24 +46,22 @@
   line-height: $height - 1;
 }
 
-/* COLOR MIXINS
-======================================================================= */
 
-/* ANIMATION MIXINS
+/* Animation
 ======================================================================= */
 @mixin animatedUnderline($height, $width, $color) {
 	&:before {
-	  content: "";
-	  width: $width;
-	  height: $height;
 	  background-color: $color;
-	  position: absolute;
 	  bottom: 15%;
+	  content: "";
+	  height: $height;
 	  left: 15%;
 	  opacity: 0.3;
-	  visibility: hidden;
+	  position: absolute;
 	  transform: scaleX(0);
 	  transition: all 0.3s ease-out 0s;
+	  visibility: hidden;
+	  width: $width;
 	}
 
 	&:hover:before {

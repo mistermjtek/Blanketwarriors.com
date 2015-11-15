@@ -1,17 +1,27 @@
+/* List Item
+======================================================================= */
 a.list-item {
 	@include container;
-  display: block;
-  background-color: $white;
-  color: $black;
-	margin-bottom: 21px;
-  text-decoration: none;
+  background-color: $background-color-list-item;
+  border: 1px solid $background-color-list-item;
   border-radius: 2px;
-  transition: background-color .8s ease-out;
+  color: $font-color-list-item;
+  display: block;
+	margin-bottom: 21px;
+  padding: $font-size-list-item * 0.5;
+  text-decoration: none;
+  transition:
+  	background 	.8s ease-out,
+  	color 		 	.8s ease-out;
 
 	&:hover {
-	  background-color: $blue2;
-	  transition: all .3s ease-out;
+	  background-color: $background-color-list-item-hover;
+	  transition:
+	  	background 	.3s ease-out,
+	  	color 			.3s ease-out;
 	}
 }
 
-
+h1.list-item-title {
+	font-size: $font-size-list-item;
+}
