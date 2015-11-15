@@ -18,25 +18,33 @@ export default class Blog extends React.Component {
       filtered: [],
       search: ''
     }
-    //_.bindAll(this, this.onSearchUpdate, this.onTagUpdate, this.resetSearch);
-    this.onSearchUpdate = _.bind(this.onSearchUpdate, this);
-    this.onTagUpdate = _.bind(this.onTagUpdate, this);
-    this.resetSearch = _.bind(this.resetSearch, this);
+    _.bindAll(this, ['onSearchUpdate', 'searchPredicate']);
   }
 
-  // Takes each unfiltered item and returns a boolean for matching search criteria.
-  searchPredicate(item) {
+  // Updates filtering
+  onSearchUpdate(event) {
+    this.setState( {search: event.target.value}, () => {
+      this.setState( {
+        filtered: _.filter(this.state.unfiltered, this.searchPredicate)
+      });
+    });
+  }
+
+  // Takes each unfiltered listItem and returns a boolean for matching search criteria.
+  searchPredicate(listItem) {
     var searchState = this.state.search;
-    var searchTerms = [item.title, item.author.name, item.date, item.tags];
+    var searchTerms = [listItem.title, listItem.author.name, listItem.date, listItem.tags];
     return matchExists(searchTerms);
 
     function matchExists(toCheck) {
+
+      // Check information values globally for the search parameters, ignoring case.
       if(typeof toCheck === 'string' || typeof toCheck === 'number') {
-        // Check globally for the search parameters, ignoring case.
         return Boolean(toCheck.toString().match(new RegExp(searchState, 'ig')));
       }
+
+      // Return the result from any nested items.
       if(typeof toCheck === 'object') {
-        // Return the result from nested items.
         return _.some(toCheck, (nestedToCheck) => {
           return matchExists(nestedToCheck);
         });
@@ -45,40 +53,8 @@ export default class Blog extends React.Component {
     };
   }
 
-  // Updates filtering
-  onSearchUpdate(event) {
-    this.setState( {search: event.target.value}, () => {
-      this.setState( {
-        filtered: _.filter(this.state.unfiltered, _.bind(this.searchPredicate, this))
-      });
-    });
-  }
-
-  // Updates filtering
-  onTagUpdate(event) {
-    this.setState( {search: event.target.innerText}, () => {
-      this.setState( {
-        filtered: _.filter(this.state.unfiltered, _.bind(this.searchPredicate, this))
-      });
-    });
-  }
-
-  // Updates filtering
-  resetSearch() {
-    this.setState( {search: ''}, () => {
-      this.setState( {
-        filtered: _.filter(this.state.unfiltered, _.bind(this.searchPredicate, this))
-      });
-    });
-  }
-
   render() {
     const blogPosts = this.state.search ? this.state.filtered : this.state.unfiltered;
-
-    // All tags currently being used to describe every post.  Not currently being used.
-    const tags = _.reduce(this.state.unfiltered, (total, blogPost) => {
-      return _.union(total, blogPost.tags)
-    });
 
     const blogPostList = _.map(blogPosts, (blogPost) => {
       return (
