@@ -1,52 +1,95 @@
-/* DEFAULTS
+/* Project Defaults
 ======================================================================= */
 article.project footer {
-  height: 3rem;
-
-  div.links {
-    @include span(2);
-  }
-  div.links a {
-  }
-  div.links a img {
-    @include size($sizeLinkItem);
-  }
+  padding-top: 0;
+  padding-bottom: $size-social-icon;
 }
 
-/* BIG DADDY
+article.project footer .links {
+  display: block;
+  @include center(6);
+  padding-bottom: $size-social-icon;
+}
+
+article.project footer .links a img {
+  @include size($size-social-icon);
+  margin: $size-social-icon/4;
+}
+
+/* Big Daddy
 ======================================================================= */
 article.big-daddy {
-  background: $black url("http://a1star.com/images/starsglow1.gif") repeat;
+  background: $black url("/assets/projects/bigDaddy/stars.gif") repeat;
   color: $white;
   padding-top: 0;
-  p { text-align: center; }
+  text-align: center;
+}
+
+article.big-daddy h1 {
+  text-shadow: 5px 5px red, 10px 10px $slategray;
+  margin: $font-size-largest;
+  font-size: $font-size-super-massive;
+}
+
+article.big-daddy h2 {
+  text-shadow: 5px 5px red, 10px 10px $slategray;
+  font-size: $font-size-jumbo;
+}
+
+article.big-daddy h1,
+article.big-daddy h2,
+article.big-daddy h3,
+article.big-daddy h4 {
+  color: $white;
+  font-family: 'Permanent Marker';
 }
 
 article.big-daddy header {
-  margin: 0;
-  padding: $navBarHeight 0 0 0;
   width: 100%;
+  padding-top: $nav-offset;
+  background: $black url("/assets/projects/bigDaddy/Explosions.jpg") no-repeat;
+  background-size: cover;
 }
 
 article.big-daddy header img {
-  @include size(100%, auto)
+  @include center(6);
 }
 
-/* OTHER
+article.bigDaddy footer {
+  background: $black url("/assets/projects/bigDaddy/BigDaddy.png");
+}
+
+/* Crock Pot
 ======================================================================= */
 article.crock-pot {
-  background: $crockpotblack;
+  background: $background-color-crockpot;
   color: $white;
 }
 
+article.crock-pot h1 {
+  font-weight: bold;
+}
+
+article.crock-pot p {
+  color: $white;
+  font-family: $font-family-sans;
+}
+
+/* Tokki
+======================================================================= */
 article.tokki {
-  background: $tokkiblue;
+  background: $background-color-tokki;
   color: $white;
 }
 
+article.tokki p {
+  font-family: $font-family-sans;
+  color: $white;
+}
+
+/* Unearth
+======================================================================= */
 article.unearth section img {
   @include center(6);
   padding: gutter();
 }
-
-

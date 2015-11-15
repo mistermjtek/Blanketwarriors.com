@@ -1,3 +1,5 @@
+/* Reset Styles
+======================================================================= */
 html, body, main, ul, ol, li, form, fieldset, legend, .wrapper {
   margin: 0;
   padding: 0;
@@ -35,4 +37,10 @@ input, textarea, select {
 abbr, acronym {
   border-bottom: .1em dotted;
   cursor: help;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }

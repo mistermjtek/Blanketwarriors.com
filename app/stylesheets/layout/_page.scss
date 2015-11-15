@@ -1,6 +1,8 @@
+/* Page
+======================================================================= */
 div.wrapper.page {
   @include container;
-  background-color: $blue1;
-  padding-top: $navBarHeight;
+  background-color: $background-color-page;
+  padding-top: $nav-offset;
   min-height: 100%;
 }

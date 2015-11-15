@@ -12,7 +12,7 @@ export default class Home extends React.Component {
     return (
       <div className="wrapper">
         <div className="home content">
-          <h1>Blanket Warriors</h1>
+          <h1 className="display-1">Blanket Warriors</h1>
           <img
             src="/assets/images/phant.svg"
             onerror="this.src='/assets/images/phant.png'"

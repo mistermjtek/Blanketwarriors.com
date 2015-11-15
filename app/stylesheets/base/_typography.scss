@@ -1,71 +1,283 @@
-/* TYPEOGRAPHY FONTS
+/* Fonts
 ======================================================================= */
-$base-font-family-sans: "fira-sans", "Lucida Grande", "Arial", "sans-serif";
-$base-font-family-serif: "freight-text-pro", "Palatino Linotype", "Book Antiqua", "Georgia", "serif";
-$base-font-family-code: "source-code-pro", "Consolas", 'Andale Mono WT', 'Andale Mono';
-$base-font-family-fancy: "jaf-bernino-sans", "Helvetica";
-$base-font-weight: 400;
+$font-family-sans: "Fira Sans", "Lucida Grande", "Helvetica", "sans-serif";
+$font-family-serif: "Freight Text Pro", "Palatino Linotype", "Georgia", "serif";
+$font-family-code: "Consolas", "Monaco", "Andale Mono", "Monospace";
 
-/* TYPEOGRAPHY SCALE
+/* Typographic Scale (http://www.modularscale.com/?1&em&1.5&sass&text)
 ======================================================================= */
-$typography-scale: (
-	type-base,
-	type-large,
-	type-larger,
-	type-largest,
-	type-jumbo
-);
+$font-size-super-massive: 4.882rem;
+$font-size-jumbo:         2.441rem;
+$font-size-largest:       1.953rem;
+$font-size-larger:        1.563rem;
+$font-size-large:         1.25rem;
+$font-size-base:          1rem;
+$font-size-small:         0.9rem;
+$font-size-smaller:       0.8rem;
+$font-size-smallest:      0.72rem;
+$font-size-micro:         0.64rem;
 
-/* TYPEOGRAPHY RESPONSIVE BASE
+/* Font Size
 ======================================================================= */
-$typography-base: (
-  default: (
-    base-font-size: 16px,
-    vertical-rhythm: 1.414,
-    type-scale: 1.2,
-    min-width: null
-  ),
-  medium: (
-    base-font-size: 18px,
-    vertical-rhythm: 1.5,
-    type-scale: 1.414,
-    min-width: 480px
-  ),
-  large: (
-    base-font-size: 20px,
-    vertical-rhythm: 1.618,
-    type-scale: 1.5,
-    min-width: 960px
-  ),
-  xlarge: (
-    base-font-size: 24px,
-    vertical-rhythm: 1.618,
-    type-scale: 1.618,
-    min-width: 1300px
-  )
-);
+$font-size-nav:             $font-size-base;
+$font-size-body:            $font-size-base;
+$font-size-list-item:       $font-size-large;
+$font-size-home-title:      $font-size-super-massive;
+$font-size-heading-1:       $font-size-jumbo;
+$font-size-heading-2:       $font-size-largest;
+$font-size-heading-3:       $font-size-larger;
+$font-size-heading-4:       $font-size-large;
+$font-size-monospace:       $font-size-smallest;
+$font-size-monospace-title: $font-size-base;
 
-/* OTHER TYPEOGRAPHY (TODO)
+/* Font Weight
 ======================================================================= */
-$lineHeight-tightest: %type-base;
-$lineHeight-tighter: %type-base;
-$lineHeight-tight: %type-base;
-$lineHeight-baseSans: %type-base;
-$lineHeight-base: %type-base;
-$lineHeight-loose: %type-base;
-$lineHeight-looser: %type-base;
+$font-weight-nav:               normal;
+$font-weight-heading-1:         normal;
+$font-weight-heading-2:         normal;
+$font-weight-heading-3:         normal;
+$font-weight-heading-4:         normal;
+$font-weight-article-heading-1: normal;
+$font-weight-article-heading-2: normal;
+$font-weight-article-heading-3: normal;
+$font-weight-article-heading-4: bold;
 
-$letterSpacing-tightest: %type-base;
-$letterSpacing-tighter: %type-base;
-$letterSpacing-tight: %type-base;
-$letterSpacing-normal: %type-base;
-$letterSpacing-loose: %type-base;
-$letterSpacing-looser: %type-base;
-
-/* DEFAULT
+/* Line Height
 ======================================================================= */
-body {
-  @extend %type-base;
-  font-family: $base-font-family-sans;
-  font-weight: $base-font-weight;
+$line-height-heading-1:   1.125;
+$line-height-heading-2:   1.2;
+$line-height-heading-3:   1.25;
+$line-height-heading-4:   1.25;
+$line-height-monospace:   1.4;
+$line-height-body:        1.6;
+$line-height-nav:         1.25;
+
+/* Paragraph Spacing
+======================================================================= */
+$paragraph-spacing-p:  $font-size-small;
+$paragraph-spacing-h1: $font-size-large;
+$paragraph-spacing-h2: $font-size-large;
+$paragraph-spacing-h3: $font-size-large;
+$paragraph-spacing-h4: $font-size-large;
+
+/* Body
+======================================================================= */
+html {
+  font-size:    20px;
+  font-family:  $font-family-sans;
+  color:        $font-color;
+}
+
+h1 {
+  font-size:    $font-size-heading-1;
+  line-height:  $line-height-heading-1;
+  font-weight:  $font-weight-heading-1;
+}
+
+h2 {
+  font-size:    $font-size-heading-2;
+  line-height:  $line-height-heading-2;
+  font-weight:  $font-weight-heading-2;
+}
+
+h3 {
+  font-size:    $font-size-heading-3;
+  line-height:  $line-height-heading-3;
+  font-weight:  $font-weight-heading-3;
+}
+
+h4 {
+  font-size:    $font-size-heading-4;
+  line-height:  $line-height-heading-4;
+  font-weight:  $font-weight-heading-4;
+}
+
+p {
+  line-height:  $line-height-body;
+  font-family:  $font-family-serif;
+}
+
+nav a {
+  font-size:    $font-size-nav;
+  line-height:  $line-height-nav;
+  font-weight:  $font-weight-nav;
+}
+
+/* Articles
+======================================================================= */
+article header h1 {
+  line-height: $line-height-heading-1;
+}
+
+article header h2 {
+  font-size: $font-size-heading-4;
+  line-height: $line-height-heading-1;
+}
+
+article header h3 {
+  font-family: $font-family-serif;
+  font-size: $font-size-body;
+  line-height: $line-height-heading-1;
+}
+
+article section h1,
+article section h2,
+article section h3,
+article section h4 {
+  color:  $font-color-heading-1;
+  margin-top: $paragraph-spacing-h1;
+}
+
+article section p ,
+article section a {
+  font-family:  $font-family-serif;
+  line-height:  $line-height-body;
+  color:        $font-color-article;
+}
+
+article section p {
+  margin-bottom:  $paragraph-spacing-p;
+}
+
+article section a {
+  text-decoration: none;
+  border-bottom: 1px solid $gray-dark;
+  text-shadow:
+    -1px 0    $background-color-article,
+    0    1px  $background-color-article,
+    1px  0    $background-color-article,
+    0    -1px $background-color-article;
+
+  &:hover {
+    border-bottom: 1px solid $blue;
+  }
+}
+
+article section h1 code,
+article section h2 code,
+article section h3 code,
+article section h4 code {
+  font-weight: bold;
+  font-size: $font-size-monospace-title;
+}
+
+/* Code
+======================================================================= */
+code,
+pre {
+  color: black;
+  background: $background-color-snippet;
+  text-shadow: 0 1px $background-color-snippet;
+  font-family: $font-family-code;
+  line-height: $line-height-monospace;
+  font-size: $font-size-monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  border-radius: 10px;
+
+  @include vendorize(tab-size, 4);
+  @include vendorize(hyphens, none);
+}
+
+// Selections
+pre::selection, pre ::selection,
+code::selection, code ::selection,
+pre::-moz-selection, pre ::-moz-selection,
+code::-moz-selection, code ::-moz-selection {
+  text-shadow: none;
+  background: $blue-lighter;
+}
+
+@media print {
+  code,
+  pre {
+    text-shadow: none;
+  }
+}
+
+// Code blocks
+pre {
+  padding: 1em;
+  margin-bottom:  $paragraph-spacing-p;
+  overflow: auto;
+}
+
+// Inline code
+:not(pre) > code {
+  padding: .1em .3em .1em .3em;
+  word-break: break-all;
+  border-radius: .3em;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: $slategray;
+}
+
+.token.punctuation {
+  color: $gray-snippet;
+}
+
+.namespace {
+  opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: $purple-snippet;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: $green-snippet;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: $brown-snippet;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: $blue-snippet;
+}
+
+.token.function {
+  color: $red-snippet;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: $orange-snippet;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
 }
