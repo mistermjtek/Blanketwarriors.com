@@ -9,8 +9,8 @@ describe('Component', function() {
 
 		beforeEach(function() {
 			React = require('react');
-			Blog = require('../../../app/components/Blog');
 			ReactTestUtils = require('react/lib/ReactTestUtils');
+			Blog = require('app/components/Blog');
 
 			shallowRenderer = ReactTestUtils.createRenderer();
 		});

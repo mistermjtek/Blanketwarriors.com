@@ -10,7 +10,7 @@ describe('Component', function() {
 		beforeEach(function() {
 			React = require('react');
 			ReactTestUtils = require('react/lib/ReactTestUtils');
-			About = require('../../../app/components/About');
+			About = require('app/components/About');
 			shallowRenderer = ReactTestUtils.createRenderer();
 		});
 

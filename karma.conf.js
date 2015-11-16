@@ -12,7 +12,7 @@ module.exports = function(config) {
 		frameworks: ['mocha', 'chai', 'sinon'],
 		reporters: ['mocha'],
 		singleRun: true,
-		webpack: webpackConfig.default,
+		webpack: webpackConfig.test,
 		webpackServer: {
 		  noInfo: true
 		},

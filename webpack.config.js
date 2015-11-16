@@ -22,7 +22,13 @@ var defaultConfig = {
     ]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx'],
+    alias: {
+      app: path.resolve(__dirname, 'app'),
+      test: path.resolve(__dirname, 'test'),
+      build: path.resolve(__dirname, 'build'),
+      assets: path.resolve(__dirname, 'assets')
+    }
   }
 }
 
@@ -61,16 +67,19 @@ var serverConfig = {
   }
 };
 
-//if(process.env.NODE_ENV === 'DEVELOPMENT') {
+var testConfig = {};
+
+if(process.env.NODE_ENV === 'DEVELOPMENT') {
   clientConfig.devtool = '#eval-source-map';
   clientConfig.debug = true;
 
   serverConfig.devtool = '#evalsource-map';
   serverConfig.debug = true;
-//}
+}
 
 module.exports = {
   default: defaultConfig,
   client: _.defaultsDeep(clientConfig, defaultConfig),
-  server: _.defaultsDeep(serverConfig, defaultConfig)
+  server: _.defaultsDeep(serverConfig, defaultConfig),
+  test: _.defaultsDeep(testConfig, defaultConfig)
 }
