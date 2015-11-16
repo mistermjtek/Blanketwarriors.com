@@ -14,8 +14,14 @@ import {createHistory} from 'history';
 import Routes from './components/Routes';
 import './stylesheets/style.scss';
 
-let history = createHistory();
+const mountPoint = document.getElementsByTagName('main')[0];
+const state = {
+	history: createHistory(),
+	location: null
+};
 
-// Renders the React-Router using the HTML browser history.
-render(<Router history={history}>{Routes}</Router>, document.getElementsByTagName('main')[0]);
+state.history.listen(location => {
+	state.location = location;
+});
 
+render(<Router {...state}>{Routes}</Router>, mountPoint);

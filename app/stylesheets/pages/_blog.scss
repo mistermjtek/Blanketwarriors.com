@@ -1,5 +1,9 @@
 /* Blog
 ======================================================================= */
+.wrapper.blog.page {
+	padding-top: $nav-offset;
+}
+
 .posts .list-item-title {
 	width: span(12);
 }

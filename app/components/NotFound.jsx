@@ -7,6 +7,7 @@
 
 'use strict';
 import React from 'react';
+import Img from './SVGImg';
 
 export default class NotFound extends React.Component {
   render() {
@@ -14,7 +15,7 @@ export default class NotFound extends React.Component {
       <div className="wrapper notFound page">
       	<div className="content">
       		<div className="central-image">
-        		<img src="/assets/images/404.svg" onerror="this.src='/assets/basic/404.png'" />
+        		<Img src="/assets/images/404.svg" fallback="/assets/images/404.png" />
         	</div>
         </div>
       </div>
