@@ -6,16 +6,22 @@
 
 'use strict';
 import React from 'react';
+import Img from './SVGImg';
 
 export default class Home extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <div className="wrapper">
         <div className="home content">
-          <h1 className="display-1">Blanket Warriors</h1>
-          <img
+          <h1>Blanket Warriors</h1>
+          <Img
             src="/assets/images/phant.svg"
-            onerror="this.src='/assets/images/phant.png'"
+            alt="Phant"
+            fallback="/assets/images/phant.png"
           />
         </div>
       </div>

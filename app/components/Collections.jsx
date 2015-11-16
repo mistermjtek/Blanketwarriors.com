@@ -14,8 +14,8 @@ import blogPosts from '../../assets/Blog/metadata';
 import blogContent from '../lib/posts';
 import _ from 'lodash';
 
-_.forEach(blogPosts, function(value, key) {
-  blogPosts[key].content = blogContent[key];
+_.forEach(blogPosts, function(blogPost, index) {
+  blogPost.content = blogContent[index];
 });
 
 const collections = {

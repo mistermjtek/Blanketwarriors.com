@@ -9,7 +9,7 @@
 
 'use strict';
 import React from 'react';
-import {Router, Route, IndexRoute} from 'react-router';
+import {Router, Route} from 'react-router';
 
 import Layout from './Layout';
 import Home from './Home';
@@ -34,7 +34,7 @@ const routes = (
     <Route path="projects" component={Projects} />
     <Route path="projects/:name" component={Project} />
 
-    <Route path="*" component={NotFound} />
+    <Route path="*" status={404} component={NotFound} />
   </Route>
 );
 

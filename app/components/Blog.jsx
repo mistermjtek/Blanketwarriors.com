@@ -12,7 +12,7 @@ import {Link} from 'react-router';
 export default class Blog extends React.Component {
 
   constructor(props) {
-    super();
+    super(props);
     this.state = {
       unfiltered: _.sortBy(props.collections.BlogPosts, blogPost => blogPost.index),
       filtered: [],

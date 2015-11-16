@@ -7,15 +7,17 @@
 'use strict';
 import _ from 'lodash';
 import React from 'react';
-import { Link } from 'react-router';
+import {Link} from 'react-router';
 
 export default class NavLink extends React.Component {
   render() {
-    // All props but 'to' and 'other'.
-    let other = _.omit(this.props, 'to', 'other');
-    let className = this.props.className || '';
-    if( this.props.path === this.props.to ) { className = className + ' selected'; }
+		const linkedPath = this.props.to;
+		const currentPath = this.props.path;
+    const otherProps = _.omit(this.props, 'to', 'other');
 
-    return ( <Link to={ this.props.to } className={ className } {...other} /> );
+		let className = this.props.className || '';
+		if(linkedPath === currentPath){ className += ' selected'; }
+
+    return ( <Link to={linkedPath} className={className} {...otherProps} /> );
   }
 }

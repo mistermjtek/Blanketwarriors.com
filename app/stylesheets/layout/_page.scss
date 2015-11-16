@@ -3,6 +3,5 @@
 div.wrapper.page {
   @include container;
   background-color: $background-color-page;
-  padding-top: $nav-offset;
   min-height: 100%;
 }

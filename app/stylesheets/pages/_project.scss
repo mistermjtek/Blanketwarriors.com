@@ -6,9 +6,10 @@ article.project footer {
 }
 
 article.project footer .links {
-  display: block;
   @include center(6);
+  display: block;
   padding-bottom: $size-social-icon;
+  text-align: center;
 }
 
 article.project footer .links a img {

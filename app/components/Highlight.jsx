@@ -17,8 +17,8 @@ class Highlight extends React.Component {
     if (this.props.innerHTML) {
       return (
         <div
-        dangerouslySetInnerHTML={{__html: this.props.children[1]}}
-        className={this.props.className || null}
+          dangerouslySetInnerHTML={{__html: this.props.children[1]}}
+          className={this.props.className || null}
         />
       );
     } else {

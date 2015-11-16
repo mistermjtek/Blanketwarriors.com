@@ -12,13 +12,10 @@ import {Link} from 'react-router';
 
 export default class Projects extends React.Component {
   render() {
-    // Router.Link links to a route.  We pass in a project parameter to determine
-    // which project view to show.
     const projects = _.sortBy(this.props.collections.Projects, project => project.index);
-
-    const projectList = projects.map( project => {
+    const projectComponents = _.map(projects, project => {
       return (
-        <Link className="list-item" key={project.name} to={"/projects/" + project.name} params={project}>
+        <Link className="list-item" key={project.name} params={project} to={"/projects/" + project.name}>
           <h1 className="list-item-title">{project.title}</h1>
         </Link>
       );
@@ -26,7 +23,7 @@ export default class Projects extends React.Component {
 
     return (
       <div className="wrapper projects content page">
-        <div className="list">{projectList}</div>
+        <div className="list">{projectComponents}</div>
       </div>
     );
   }

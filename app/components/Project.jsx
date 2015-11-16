@@ -10,18 +10,21 @@ import _ from 'lodash';
 import React from 'react';
 
 export default class Project extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   getProject() {
-    // Finds the project from Collections
     return _.find(this.props.collections.Projects, (project) => {
       return project.name === this.props.params.name;
     });
   }
 
   render() {
-    let project = this.getProject();
-    let Project = project.component;
+    const project = this.getProject();
+    const ProjectComponent = project.component;
+    const props = _.assign(this.props, {project: project});
 
-    let props = _.assign({}, this.props, {project: project});
-    return <Project {...props} />
+    return <ProjectComponent {...props} />
   }
 }
