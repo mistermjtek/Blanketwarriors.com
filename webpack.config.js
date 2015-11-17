@@ -27,7 +27,9 @@ var defaultConfig = {
       app: path.resolve(__dirname, 'app'),
       test: path.resolve(__dirname, 'test'),
       build: path.resolve(__dirname, 'build'),
-      assets: path.resolve(__dirname, 'assets')
+      assets: path.resolve(__dirname, 'assets'),
+      stubs: path.resolve(__dirname, 'test/stubs'),
+      fixtures: path.resolve(__dirname, 'test/fixtures')
     }
   }
 }

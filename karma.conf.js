@@ -3,7 +3,7 @@ var webpackConfig = require('./webpack.config.js');
 module.exports = function(config) {
 	config.set({
 		files: [
-		  'test/client/**/*.js'
+		  'test/unit/**/*.js'
 		],
 		preprocessors: {
 		  'test/**/*Spec.js': ['webpack']

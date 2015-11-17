@@ -1,3 +1,4 @@
+import collections from 'fixtures/collections';
 var React;
 var ReactTestUtils;
 var Blog;
@@ -16,8 +17,7 @@ describe('Component', function() {
 		});
 
 	  it('Should render', function() {
-	  	const blogPosts = [{index: 1}];
-			shallowRenderer.render(<Blog collections={{blogPosts}} />);
+			shallowRenderer.render(<Blog collections={collections} />);
 			Component = shallowRenderer.getRenderOutput();
 	    expect(Component).to.exist;
 	  });
