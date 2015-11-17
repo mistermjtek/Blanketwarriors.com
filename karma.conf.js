@@ -3,22 +3,23 @@ var webpackConfig = require('./webpack.config.js');
 module.exports = function(config) {
 	config.set({
 		files: [
-		  'test/client/**/*.js'
+		  'test/unit/**/*.js'
 		],
 		preprocessors: {
-		  'test/**/*.js': ['webpack']
+		  'test/**/*Spec.js': ['webpack']
 		},
 		browsers: ['Chrome'],
-		frameworks: ['jasmine', 'sinon'],
+		frameworks: ['mocha', 'chai', 'sinon'],
 		reporters: ['mocha'],
 		singleRun: true,
-		webpack: webpackConfig.default,
+		webpack: webpackConfig.test,
 		webpackServer: {
 		  noInfo: true
 		},
 		plugins: [
+			'karma-chai',
+			'karma-mocha',
 			'karma-sinon',
-			'karma-jasmine',
 			'karma-webpack',
 			'karma-mocha-reporter',
 			'karma-chrome-launcher'
