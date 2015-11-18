@@ -38,6 +38,7 @@
     "karma-mocha": "^0.2.1",
     "karma-mocha-reporter": "^1.1.1",
     "karma-sinon": "^1.0.4",
+    "karma-sourcemap-loader": "^0.3.6",
     "karma-webpack": "^1.7.0",
     "mocha": "^2.3.4",
     "node-sass": "^3.4.0",

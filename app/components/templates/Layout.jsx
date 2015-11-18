@@ -17,7 +17,11 @@ export default class Layout extends React.Component {
 	}
   render() {
   	const navProps = _.omit(this.props, 'children');
-  	const routeProps = _.assign(navProps, {collections: collections});
+  	const routeProps = _.assign(navProps, {
+      posts: collections.blogPosts,
+      projects: collections.projects
+    });
+
     return (
       <div>
         <Navigation {...navProps} />

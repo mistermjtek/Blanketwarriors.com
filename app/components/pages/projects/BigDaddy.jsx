@@ -45,6 +45,6 @@ project.component = React.createClass({
       </article>
     );
   }
-})
+});
 
 export default project;
