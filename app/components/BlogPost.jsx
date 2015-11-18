@@ -40,14 +40,14 @@ export default class BlogPost extends React.Component {
   componentDidMount() {this.addDisqus();}
 
   // Find the blog post from Collections.
-  getBlogPost() {
+  get blogPost() {
     return _.find(this.props.collections.BlogPosts, post => {
       return post.name === this.props.params.name;
     });
   }
 
   render() {
-    const blogPost = this.getBlogPost();
+    const blogPost = this.blogPost;
 
     class BlogPostComponent extends React.Component {
       render() {

@@ -69,9 +69,11 @@ var serverConfig = {
   }
 };
 
-var testConfig = {};
+var testConfig = {
+  devtool: 'inline-source-map'
+};
 
-if(process.env.NODE_ENV === 'DEVELOPMENT') {
+if(process.env.NODE_ENV !== 'PRODUCTION') {
   clientConfig.devtool = '#eval-source-map';
   clientConfig.debug = true;
 

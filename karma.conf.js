@@ -3,10 +3,10 @@ var webpackConfig = require('./webpack.config.js');
 module.exports = function(config) {
 	config.set({
 		files: [
-		  'test/unit/**/*.js'
+		  'tests.webpack.js'
 		],
 		preprocessors: {
-		  'test/**/*Spec.js': ['webpack']
+		  'tests.webpack.js': ['webpack', 'sourcemap']
 		},
 		browsers: ['Chrome'],
 		frameworks: ['mocha', 'chai', 'sinon'],
@@ -22,7 +22,8 @@ module.exports = function(config) {
 			'karma-sinon',
 			'karma-webpack',
 			'karma-mocha-reporter',
-			'karma-chrome-launcher'
+			'karma-chrome-launcher',
+			'karma-sourcemap-loader'
 		]
 	});
 }
