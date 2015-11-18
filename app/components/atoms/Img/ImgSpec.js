@@ -1,6 +1,6 @@
 'use strict';
 import React from 'react';
-import { renderIntoDocument, createRenderer, findRenderedDOMComponentWithTag, Simulate } from 'react/lib/ReactTestUtils';
+import TestUtils from 'react/lib/ReactTestUtils';
 import Img from './Img';
 
 describe('Atom', function() {
@@ -10,7 +10,7 @@ describe('Atom', function() {
 
 		beforeEach(function() {
 			node = document.createElement('div');
-			shallowRenderer = createRenderer();
+			shallowRenderer = TestUtils.createRenderer();
 		});
 
 	  it('Should render an `img` tag with appropriate props', function renderImg() {
@@ -29,14 +29,14 @@ describe('Atom', function() {
 	  });
 
 	  it('Should make the src match the fallback if onError is fired', function matchImgSrc() {
-	  	const Component = renderIntoDocument(
+	  	const Component = TestUtils.renderIntoDocument(
 	  		<Img
           src="assets/images/phant.svg"
           alt="Phant"
           fallback="assets/images/phant.png"
         />);
 	  	expect(Component.state.src).to.equal('assets/images/phant.svg');
-  		Simulate.error(findRenderedDOMComponentWithTag(Component, 'img'));
+  		TestUtils.Simulate.error(TestUtils.findRenderedDOMComponentWithTag(Component, 'img'));
 		  expect(Component.state.src).to.equal('assets/images/phant.png');
 	  });
 	});

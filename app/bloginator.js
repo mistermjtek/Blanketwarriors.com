@@ -34,8 +34,7 @@ function readPosts(inputDir, outputDir, assetsDir, done) {
             done();
           });
         });
-      })
-      .value();
+      });
   });
 }
 

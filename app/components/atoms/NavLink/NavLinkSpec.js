@@ -36,17 +36,5 @@ describe('Atom', function() {
 	  		expect(a.getAttribute('href')).to.equal('/blog?the=query#hash');
 	  	});
 	  });
-
-	  it('Should be selected if its associated path is our current path', function shouldSelect() {
-			shallowRenderer.render(<NavLink to='/home' path='/home' className='link' />);
-			const Component = shallowRenderer.getRenderOutput();
-	    expect(Component.props.className).to.equal('link selected');
-	  });
-
-    it('Should not be selected if its associated path isn\'t our current path', function shouldNotSelect() {
-  		shallowRenderer.render(<NavLink to='/home' path='/blog' className='link' />);
-  		const Component = shallowRenderer.getRenderOutput();
-      expect(Component.props.className).to.equal('link');
-    });
 	});
 });

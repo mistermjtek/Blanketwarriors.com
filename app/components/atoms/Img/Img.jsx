@@ -1,9 +1,3 @@
-/**
- * Img
- *
- * A component to help us deal with image fallback options.
- */
-
 'use strict';
 import _ from 'lodash';
 import React from 'react';
@@ -12,7 +6,7 @@ class Img extends React.Component {
   constructor(props) {
     super(props);
     this.state = { src: this.props.src };
-    _.bindAll(this, 'handleError');
+    _.bindAll(this, ['handleError']);
   }
 
   handleError() {
