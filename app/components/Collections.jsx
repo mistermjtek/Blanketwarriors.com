@@ -13,6 +13,7 @@ import CrockPot from './projects/CrockPot';
 import blogPosts from '../../assets/Blog/metadata';
 import blogContent from '../lib/posts';
 import _ from 'lodash';
+import users from '../lib/users';
 
 _.forEach(blogPosts, function(blogPost, index) {
   blogPost.content = blogContent[index];
@@ -25,7 +26,8 @@ const collections = {
     Unearth,
     BigDaddy,
   ],
-  BlogPosts: blogPosts
+  BlogPosts: blogPosts,
+  userData: users
 };
 
 export default collections;
