@@ -5,8 +5,7 @@ import collections from './Collections';
 
 export default class UserCard extends React.Component {
 
-	render() {
-
+  render() {
     const styles = {
       text: {
         color: 'black',
@@ -23,14 +22,14 @@ export default class UserCard extends React.Component {
       card: {
         padding: '20px'
       }
-    };
+  };
 
     // Returns the content in a user
     var getUser = function(userData) {
       return (
         <div style={styles.text} key={userData.name}>
           <img width='150' style={styles.image} src={userData.picture}/>
-          <h3 >{userData.name}</h3>
+          <h3>{userData.name}</h3>
         </div>
       );
     };
