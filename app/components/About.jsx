@@ -7,7 +7,7 @@
 'use strict';
 import React from 'react';
 import Card from 'react-material-card';
-import UserCard from './UserCard'
+import UserCard from './UserCard';
 
 export default class About extends React.Component {
 
